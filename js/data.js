@@ -199,6 +199,7 @@ const data = [
     "precio_total": 117
   }, 
   {
+    "tipo": "Zapatillas",
     "marca": "Adidas",
     "modelo": "Ultraboost 21",
     "talles": ["8", "10", "11"],
@@ -212,6 +213,7 @@ const data = [
     "precio_total": 135
   },
   {
+    "tipo": "Zapatillas",
     "marca": "Nike",
     "modelo": "Air Max 270",
     "talles": ["8", "9", "10", "11"],
@@ -271,7 +273,7 @@ const data = [
 
     "tipo": "Camisetas",
     "marca": "Nike",
-    "equipo": "FC Barcelona",
+    "modelo": "FC Barcelona",
     "color": "Azul y Grana",
     "talla": ["S", "M", "L", "XL"],
     "stock": 100,
@@ -284,19 +286,19 @@ const data = [
   {
     "tipo": "Camisetas",
     "marca": "Adidas",
-    "equipo": "Real Madrid",
+    "modelo": "Real Madrid",
     "color": "Blanco",
     "talla": ["S", "M", "L", "XL"],
     "stock": 80,
     "id": "AD2001",
     "precio": 85,
     "descuento": 5,
-    "imagen": "https://http2.mlstatic.com/camiseta-oficial-real-madrid-100-original-adidas-D_NQ_NP_567025-MCO25351965591_022017-F%7D.jpg",
+    "imagen": "https://img.planetafobal.com/2013/08/real-madrid-adidas-titular-2013-2014-camiseta.jpg",
     "descripcion": "La camiseta de fútbol del Real Madrid, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego."
   },
   {
     "tipo": "Camisetas",
-    "marca": "Puma",
+    "modelo": "Puma",
     "equipo": "AC Milan",
     "color": "Negro y Rojo",
     "talla": ["S", "M", "L", "XL"],
@@ -310,7 +312,7 @@ const data = [
   {
     "tipo": "Camisetas",
     "marca": "Nike",
-    "equipo": "Paris Saint-Germain",
+    "modelo": "Paris Saint-Germain",
     "color": "Azul",
     "talla": ["S", "M", "L", "XL"],
     "stock": 90,
@@ -323,7 +325,7 @@ const data = [
   {
     "tipo": "Camisetas",
     "marca": "Canterbury",
-    "equipo": "All Blacks",
+    "modelo": "All Blacks",
     "color": "Negro",
     "talla": ["S", "M", "L", "XL"],
     "stock": 60,
@@ -336,7 +338,7 @@ const data = [
   {
     "tipo": "Camisetas",
     "marca": "Le Coq",
-    "equipo": "Selección Argentina",
+    "modelo": "Selección Argentina",
     "color": "Blanco y Celeste",
     "talla": ["XS", "S", "M", "L"],
     "stock": 45,
@@ -349,7 +351,7 @@ const data = [
   {
     "tipo": "Camisetas",
     "marca": "Mizuno",
-    "equipo": "Selección Japonesa",
+    "modelo": "Selección Japonesa",
     "color": "Blanco y Rojo",
     "talla": ["XS", "S", "M", "L"],
     "stock": 40,
@@ -362,7 +364,7 @@ const data = [
   {
     "tipo": "Camisetas",
     "marca": "Adidas",
-    "equipo": "Boca Juniors",
+    "modelo": "Boca Juniors",
     "color": "Azul y Amarillo",
     "talla": ["S", "M", "L", "XL"],
     "stock": 55,
@@ -375,7 +377,7 @@ const data = [
   {
     "tipo": "Camisetas",
     "marca": "Adidas",
-    "equipo": "Colo Colo",
+    "modelo": "Colo Colo",
     "color": "Blanco y Negro",
     "talla": ["S", "M", "L", "XL"],
     "stock": 50,
@@ -388,7 +390,7 @@ const data = [
   {
     "tipo": "Camisetas",
     "marca": "Adidas",
-    "equipo": "Selección Argentina",
+    "modelo": "Selección Argentina",
     "color": "Celeste y Blanco",
     "talla": ["S", "M", "L", "XL"],
     "stock": 45,
@@ -399,7 +401,7 @@ const data = [
     "descripcion": "Diseñada para los verdaderos fanáticos del fútbol y para aquellos que llevan el orgullo argentino en el corazón, esta camiseta de la selección argentina es un símbolo de pasión y tradición. Fabricada con los mejores materiales y la más alta calidad, esta camiseta ofrece comodidad y rendimiento en cada partido. Con los icónicos colores celeste y blanco, y el escudo de la AFA en el pecho, esta camiseta representa la historia y la grandeza del fútbol argentino. Ya sea en el estadio o en la calle, llevar esta camiseta es mostrar tu apoyo incondicional a la Albiceleste y a todo lo que representa el fútbol argentino.La camiseta de rugby de la Selección Argentina, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología que absorbe la humedad para mantenerte fresco y seco durante el juego."
   },
   {
-    "tipo": "remeras",
+    "tipo": "Remeras",
     "marca": "Adidas",
     "modelo": "Essentials",
     "talles": ["XS", "S", "M", "L", "XL"],
@@ -413,7 +415,7 @@ const data = [
     "imagen": "https://acdn.mitiendanube.com/stores/088/647/products/gl3732_1_apparel_photography_front-view_white1-b352c83abdbeed1c4316509775499143-1024-1024.jpg"
   },
   {
-    "tipo": "remeras",
+    "tipo": "Remeras",
     "marca": "Nike",
     "modelo": "Dri-FIT",
     "talles": ["S", "M", "L", "XL"],
@@ -427,7 +429,7 @@ const data = [
     "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/r/e/remera-nike-entrenamiento-dry-fit-dye-2-blanca-510020dx0965121-1.jpg "
   },
   {
-    "tipo": "remeras",
+    "tipo": "Remeras",
     "marca": "Under Armour",
     "modelo": "Tech",
     "talles": ["XS", "S", "M", "L", "XL"],
@@ -441,7 +443,7 @@ const data = [
     "imagen": "https://pacogarcia.vtexassets.com/arquivos/ids/193774-800-1067?v=638334086725930000&width=800&height=1067&aspect=true "
   },
   {
-    "tipo": "remeras",
+    "tipo": "Remeras",
     "marca": "Puma",
     "modelo": "Essential",
     "talles": ["S", "M", "L", "XL"],
@@ -455,7 +457,7 @@ const data = [
     "imagen": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_706,h_706/global/586985/92/fnd/ARG/fmt/png "
   },
   {
-    "tipo": "remeras",
+    "tipo": "Remeras",
     "marca": "Reebok",
     "modelo": "Workout",
     "talles": ["XS", "S", "M", "L", "XL"],
@@ -469,7 +471,7 @@ const data = [
     "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/1/1/111020gj0702001-1.jpg "
   },
   {
-    "tipo": "patalones",
+    "tipo": "Patalones",
     "marca": "Nike",
     "modelo": "Tech Fleece",
     "talles": ["S", "M", "L", "XL"],
@@ -483,7 +485,7 @@ const data = [
     "imagen": "https://www.quuot.com.ar/1073-large_default/pantalon-nike-sportswear-tech-fleece.jpg "
   },
   {
-    "tipo": "patalones",
+    "tipo": "Patalones",
     "marca": "Adidas",
     "modelo": "Tiro 19",
     "talles": ["XS", "S", "M", "L", "XL"],
@@ -497,7 +499,7 @@ const data = [
     "imagen": "https://s3.sa-east-1.amazonaws.com/www.vaypol.com.ar/variants/ajb4sz3pq3tjxv27ouyv5x3183rm/c77c2a06864ac9aca38dc5bd9371de015471edcdbf322dfb14411689bf968ae5 "
   },
   {
-    "tipo": "patalones",
+    "tipo": "Patalones",
     "marca": "Puma",
     "modelo": "Evostripe",
     "talles": ["S", "M", "L", "XL"],
@@ -511,7 +513,7 @@ const data = [
     "imagen": "https://sporting.vtexassets.com/arquivos/ids/295047/1085814-003-1.jpg?v=637583263335730000"
   },
   {
-    "tipo": "patalones",
+    "tipo": "Patalones",
     "marca": "Under Armour",
     "modelo": "Rival",
     "talles": ["S", "M", "L", "XL"],
@@ -525,7 +527,7 @@ const data = [
     "imagen": "https://rossettiar.vtexassets.com/arquivos/ids/1648472/https---rossport.jpg?v=638436477316800000"
   },
   {
-    "tipo": "patalones",
+    "tipo": "Patalones",
     "marca": "Reebok",
     "modelo": "Training",
     "talles": ["XS", "S", "M", "L", "XL"],
