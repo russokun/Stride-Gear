@@ -481,7 +481,7 @@ const data = [
     "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/1/1/111020gj0702001-1.jpg "
   },
   {
-    "tipo": "Patalones",
+    "tipo": "Pantalones",
     "marca": "Nike",
     "modelo": "Tech Fleece",
     "talles": ["S", "M", "L", "XL"],
@@ -495,7 +495,7 @@ const data = [
     "imagen": "https://www.quuot.com.ar/1073-large_default/pantalon-nike-sportswear-tech-fleece.jpg "
   },
   {
-    "tipo": "Patalones",
+    "tipo": "Pantalones",
     "marca": "Adidas",
     "modelo": "Tiro 19",
     "talles": ["XS", "S", "M", "L", "XL"],
@@ -509,7 +509,7 @@ const data = [
     "imagen": "https://s3.sa-east-1.amazonaws.com/www.vaypol.com.ar/variants/ajb4sz3pq3tjxv27ouyv5x3183rm/c77c2a06864ac9aca38dc5bd9371de015471edcdbf322dfb14411689bf968ae5 "
   },
   {
-    "tipo": "Patalones",
+    "tipo": "Pantalones",
     "marca": "Puma",
     "modelo": "Evostripe",
     "talles": ["S", "M", "L", "XL"],
@@ -523,7 +523,7 @@ const data = [
     "imagen": "https://sporting.vtexassets.com/arquivos/ids/295047/1085814-003-1.jpg?v=637583263335730000"
   },
   {
-    "tipo": "Patalones",
+    "tipo": "Pantalones",
     "marca": "Under Armour",
     "modelo": "Rival",
     "talles": ["S", "M", "L", "XL"],
@@ -537,7 +537,7 @@ const data = [
     "imagen": "https://rossettiar.vtexassets.com/arquivos/ids/1648472/https---rossport.jpg?v=638436477316800000"
   },
   {
-    "tipo": "Patalones",
+    "tipo": "Pantalones",
     "marca": "Reebok",
     "modelo": "Training",
     "talles": ["XS", "S", "M", "L", "XL"],
