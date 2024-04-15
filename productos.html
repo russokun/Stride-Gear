@@ -11,13 +11,11 @@
 </head>
 
 <body>
-    <header class="flex flex-col ">
-        <section class="bg-[#99C2EC] flex justify-between items-center p-5">
-            <div class="">
-                <img class="w-[80px]" src="./assests/img/logoconfondo.png" alt="">
-                <!-- <h1>Stride Gear</h1> -->
-            </div>
-            <nav>
+    <header class="flex flex-col w-full md:flex-wrap flex-row justify-around">
+        <section class="bg-[#99C2EC] flex flex-col justify-between items-center w-full md:flex-row">
+            <img class="h-[175px] w-[175px]" src="./assests/img/logoconfondo.png" alt="logo">
+            <!-- <h1>Stride Gear</h1> -->
+            <nav class="flex gap-4 mb-2 md:mr-8 gap-8">
                 <a href="./index.html">INICIO</a>
                 <a href="#">PRODUCTOS</a>
                 <a href="./contacto.html">CONTACTO</a>
@@ -30,8 +28,8 @@
             <!-- FILTROS -->
             <div class="min-h-20 bg-[#99C2EC]  flex flex-col justify-center items-center gap-5 lg:flex-row">
                 <!-- SEARCH -->
-                <div class="flex">
-                    <label for="" class="text-black">Busque su producto
+                <div class="flex aling-center">
+                    <label for="" class="text-black text-2xl ">Busque por marca
                         <input type="text" id="search" class="text-black ">
                     </label>
                 </div>
@@ -52,13 +50,13 @@
                 
                 <!-- CARDS -->
                 <div id="contenedorCards" class="flex justify-center flex-wrap gap-10 mt-5 mb-9 ">
-
+                 
                 </div>
             </section>
         </div>
     </main>
-    <footer class="bg-[#99C2EC] h-1/4 p-4">
-        <h3>
+    <footer class="bg-[#99C2EC] flex justify-center h-1/4 w-full p-4 mt-auto">
+        <h3 class="text-sm">
             &copy; MindHub - Stride Gear 2024 - All rights reserved.
         </h3>
     </footer>
