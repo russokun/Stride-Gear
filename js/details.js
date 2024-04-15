@@ -26,11 +26,11 @@ detalleContainer.innerHTML = `
         </div>
         <div class="flex justify-between items-center">
             <p class="text-lg font-bold">Precio Total:</p>
-            <p class="text-lg">${productoEncontrado.precio_total}</p>
+            <p class="text-lg">$${productoEncontrado.precio_total}</p>
         </div>
     </div>
     <div class="md:w-1/2">
-        <img class="h-64 w-64 object-contain rounded-lg shadow-md" src="${productoEncontrado.imagen}" alt="">
+        <img class="h-80 w-80 object-contain rounded-lg shadow-md" src="${productoEncontrado.imagen}" alt="">
     </div>
 </div>
 <div class="flex justify-center mt-8">
