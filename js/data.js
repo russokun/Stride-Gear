@@ -39,7 +39,7 @@ const data = [
     "id": "AD3001",
     "precio": 90,
     "descuento": 0,
-    "imagen": "https://assets.adidas.com/images/w_600,f_auto,q_auto/deecebcc265c43c6b092a7fa00fed2d0_9366/Zapatillas_Stan_Smith_Blanco_S75104_01_standard.jpg",
+    "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-adidas-stan-smith-ni-o-ni-a-blanca-60702846-10001efx7524001-1.jpg",
     "descripcion": "Las Adidas Stan Smith son legendarias por su diseño limpio y versátil. Son una opción elegante y moderna para cualquier ocasión.",
     "precio_total": 90
   },
@@ -109,7 +109,7 @@ const data = [
     "id": "UA8001",
     "precio": 150,
     "descuento": 20,
-    "imagen": "https://images.lvrcdn.com/Zoom72I/DMI/036_23ea7985-d01e-4e54-a761-724e6f247be1.JPG",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_795826-MLA71879204525_092023-O.webp",
     "descripcion": "Las Under Armour HOVR Phantom 2 ofrecen un ajuste preciso y una amortiguación reactiva para una comodidad sin igual. Ideales para correr o entrenar.",
     "precio_total": 120
   },
@@ -151,7 +151,7 @@ const data = [
     "id": "BR1101",
     "precio": 130,
     "descuento": 10,
-    "imagen": "https://www.brooksargentina.com/images/brooksargentina/Zapatillas%20Brooks%20Running%20Hombre%20Gho%2033.jpg",
+    "imagen": "https://deporteswordpress.b-cdn.net/wp-content/uploads/2020/07/zapatilla-brooks-ghost-13-deportes-evolution-4-e1594058256762.jpg",
     "descripcion": "Las Brooks Ghost 13 ofrecen una combinación de amortiguación y respuesta para un paseo suave y cómodo. Ideales para corredores neutrales.",
     "precio_total": 117
   },
@@ -180,7 +180,7 @@ const data = [
     "id": "AD3002",
     "precio": 180,
     "descuento": 15,
-    "imagen": "https://assets.adidas.com/images/w_600,f_auto,q_auto/c608f554cb3b4d12b392af000188c513_9366/Zapatillas_Ultraboost_1.0_Negro_HQ4199_01_standard.jpg",
+    "imagen": "https://s3.sa-east-1.amazonaws.com/www.vaypol.com.ar/variants/tofb6ehlmikxl9ig7w0e3dwh2g26/c77c2a06864ac9aca38dc5bd9371de015471edcdbf322dfb14411689bf968ae5",
     "descripcion": "Las Adidas Ultra Boost ofrecen un retorno de energía sin límites y una comodidad inigualable para tus carreras diarias.",
     "precio_total": 153
   },
@@ -208,7 +208,7 @@ const data = [
     "id": "ADU21WHPNK",
     "precio": 150,
     "descuento": 15,
-    "imagen": "https://assets.adidas.com/images/w_600,f_auto,q_auto/d5d20add2cdf4b479254ac77013743a9_9366/Zapatillas_Ultraboost_21_Rosado_FY0426_01_standard.jpg",
+    "imagen": "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/S/2/S23840_0_14.jpg",
     "descripcion": "Las Adidas Ultraboost 21 ofrecen un retorno de energía sin fin gracias a su tecnología Boost, proporcionando una sensación de ligereza en cada paso.",
     "precio_total": 135
   },
@@ -281,7 +281,8 @@ const data = [
     "precio": 80,
     "descuento": 0,
     "imagen": "https://acdn.mitiendanube.com/stores/001/312/744/products/jersey-de-futbol-del-fc-barcelona-local-2021-22-stadium-t9vlrx1-ae1cd47c7d5635f8a516292161343369-640-0.webp ",
-    "descripcion": "La camiseta de fútbol del FC Barcelona, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego."
+    "descripcion": "La camiseta de fútbol del FC Barcelona, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
+    "precio_total": 80
   },
   {
     "tipo": "Camisetas",
@@ -294,7 +295,8 @@ const data = [
     "precio": 85,
     "descuento": 5,
     "imagen": "https://img.planetafobal.com/2013/08/real-madrid-adidas-titular-2013-2014-camiseta.jpg",
-    "descripcion": "La camiseta de fútbol del Real Madrid, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego."
+    "descripcion": "La camiseta de fútbol del Real Madrid, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
+    "precio_total": 80 
   },
   {
     "tipo": "Camisetas",
@@ -307,7 +309,8 @@ const data = [
     "precio": 75,
     "descuento": 10,
     "imagen": "https://www.futbolemotion.com/imagesarticulos/200156/grandes/camiseta-puma-ac-milan-pre-match-2023-2024-red-black-0.webp",
-    "descripcion": "La camiseta de fútbol del AC Milan, fabricada por Puma, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego."
+    "descripcion": "La camiseta de fútbol del AC Milan, fabricada por Puma, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
+    "precio_total": 65
   },
   {
     "tipo": "Camisetas",
@@ -320,7 +323,8 @@ const data = [
     "precio": 90,
     "descuento": 15,
     "imagen": "https://th.bing.com/th/id/OIP.ANRR8MZmBuCLRrkNcMmHXgAAAA?rs=1&pid=ImgDetMain ",
-    "descripcion": "La camiseta de fútbol del Paris Saint-Germain, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego."
+    "descripcion": "La camiseta de fútbol del Paris Saint-Germain, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
+    "precio_total": 75
   },
   {
     "tipo": "Camisetas",
@@ -333,7 +337,8 @@ const data = [
     "precio": 70,
     "descuento": 0,
     "imagen": "https://www.rugbyes.com/images/RWC/Nueva%20Zelandia/Camiseta_Nueva_Zelandia_All_Blacks_Rugby_2018_Gris.jpg",
-    "descripcion": "La camiseta de rugby de los All Blacks, fabricada por Canterbury, es la misma que usan los jugadores en el campo. Con tecnología que absorbe la humedad para mantenerte fresco y seco durante el juego."
+    "descripcion": "La camiseta de rugby de los All Blacks, fabricada por Canterbury, es la misma que usan los jugadores en el campo. Con tecnología que absorbe la humedad para mantenerte fresco y seco durante el juego.",
+    "precio_total" : 70  
   },
   {
     "tipo": "Camisetas",
@@ -346,11 +351,12 @@ const data = [
     "precio": 60,
     "descuento": 5,
     "imagen":" https://lecoqsportif.com.ar/wp-content/uploads/2023/05/LE-COQ54257-1024x1024.jpg ",
-    "descripcion": "La camiseta de vóley de la Selección Argentina, fabricada por Mikasa, ofrece comodidad y libertad de movimiento en la cancha. Con tela transpirable para mantenerte fresco durante el juego."
-  },
+    "descripcion": "La camiseta de vóley de la Selección Argentina, fabricada por Mikasa, ofrece comodidad y libertad de movimiento en la cancha. Con tela transpirable para mantenerte fresco durante el juego.",
+    "precio_total": 55,
+     },
   {
     "tipo": "Camisetas",
-    "marca": "Mizuno",
+    "marca": "Asics",
     "modelo": "Selección Japonesa",
     "color": "Blanco y Rojo",
     "talla": ["XS", "S", "M", "L"],
@@ -359,7 +365,8 @@ const data = [
     "precio": 55,
     "descuento": 0,
     "imagen": "https://acdn.mitiendanube.com/stores/001/983/293/products/img_0032-1c99f0ee5102574b7417073398671717-640-0.webp",
-    "descripcion": "La camiseta de vóley de la Selección Japonesa, fabricada por Mizuno, ofrece comodidad y libertad de movimiento en la cancha. Con tela transpirable para mantenerte fresco durante el juego."
+    "descripcion": "La camiseta de vóley de la Selección Japonesa, fabricada por Mizuno, ofrece comodidad y libertad de movimiento en la cancha. Con tela transpirable para mantenerte fresco durante el juego.",
+    "precio_total" : 55
   },
   {
     "tipo": "Camisetas",
@@ -371,8 +378,9 @@ const data = [
     "id": "AB6003",
     "precio": 70,
     "descuento": 0,
-    "imagen": "https://i.ebayimg.com/images/g/0o4AAOSwpqVhFqei/s-l1600.jpg ",
-    "descripcion": "La camiseta de fútbol de Boca Juniors, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego."
+    "imagen": "https://acdn.mitiendanube.com/stores/001/220/451/products/nike-jordan-xxxiii-2022-04-04t215806-2811-1098cb71fd288e298a16491210604442-640-0.png",
+    "descripcion": "La camiseta de fútbol de Boca Juniors, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
+    "precio_total": 70
   },
   {
     "tipo": "Camisetas",
@@ -385,7 +393,8 @@ const data = [
     "precio": 65,
     "descuento": 0,
     "imagen": "https://th.bing.com/th/id/OIP.w78AZe4a_t1ThdLdzsfk7gHaHa?rs=1&pid=ImgDetMain ",
-    "descripcion": "La camiseta de fútbol de Colo Colo, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego."
+    "descripcion": "La camiseta de fútbol de Colo Colo, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
+    "precio_total": 65
   },
   {
     "tipo": "Camisetas",
@@ -398,7 +407,8 @@ const data = [
     "precio": 75,
     "descuento": 10,
     "imagen": "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw036a9ee9/products/ADIB3593/ADIB3593-1.JPG",
-    "descripcion": "Diseñada para los verdaderos fanáticos del fútbol y para aquellos que llevan el orgullo argentino en el corazón, esta camiseta de la selección argentina es un símbolo de pasión y tradición. Fabricada con los mejores materiales y la más alta calidad, esta camiseta ofrece comodidad y rendimiento en cada partido. Con los icónicos colores celeste y blanco, y el escudo de la AFA en el pecho, esta camiseta representa la historia y la grandeza del fútbol argentino. Ya sea en el estadio o en la calle, llevar esta camiseta es mostrar tu apoyo incondicional a la Albiceleste y a todo lo que representa el fútbol argentino.La camiseta de rugby de la Selección Argentina, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología que absorbe la humedad para mantenerte fresco y seco durante el juego."
+    "descripcion": "Diseñada para los verdaderos fanáticos del fútbol y para aquellos que llevan el orgullo argentino en el corazón, esta camiseta de la selección argentina es un símbolo de pasión y tradición. Fabricada con los mejores materiales y la más alta calidad, esta camiseta ofrece comodidad y rendimiento en cada partido. Con los icónicos colores celeste y blanco, y el escudo de la AFA en el pecho, esta camiseta representa la historia y la grandeza del fútbol argentino. Ya sea en el estadio o en la calle, llevar esta camiseta es mostrar tu apoyo incondicional a la Albiceleste y a todo lo que representa el fútbol argentino.La camiseta de rugby de la Selección Argentina, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología que absorbe la humedad para mantenerte fresco y seco durante el juego.",
+    "precio_total": 65
   },
   {
     "tipo": "Remeras",
