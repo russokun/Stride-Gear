@@ -27,8 +27,7 @@ function renderCards(productos, contenedor) {
            
            <p class="pl-4 pb-[10px]"> ${obj.descripcion.slice(0, 40)}...</p>
            <div class='flex flex-row justify-around'>
-           <a   href="./details.html?id=${obj.id}" class= "bg-black text-white p-2 w-2/4 text-center rounded-xl ">Detalles</a>
-           <button>
+           <a href="./detalles.html?id=${obj.id}" class= "bg-black text-white p-2 w-2/4 text-center rounded-xl ">Detalles</a>           <button>
            <img class='w-[50px]' src="./assests/img/compra_carrito_icon_209798.png" alt="">
        </button> 
            </div>       
@@ -45,25 +44,39 @@ renderCards(data, contenedorCards)
 function renderSelect(indumentaria, contenedor) {
     
     let template = document.createElement('template')
-
     
     indumentaria.forEach(obj => {
         template = `
         <option value="${obj}">${obj}</option>
-        `
-           
+        `          
         contenedor.innerHTML += template
     });
     
 }
 renderSelect(tipoDeIndumentaria,contenedorSelect)
  
+//FILTROS POR SEARCH
 let productoIngresado=''
-//FILTROS
 search.addEventListener('keyup', e =>{
     productoIngresado = e.target.value
-    console.log(productoIngresado);
-    renderCards(filtroPorProducto(array,productoIngresado),contenedorCards)
-})//(filtroSearch(data,tipoDeIndumentaria),productoIngresado)
-let filtroPorProducto = (array, productoIngresado) => array.filter(productos => productos.marca.toLowerCase().includes(productoIngresado.trim().toLowerCase()))
+    renderCards(marca(select(data,selecProducto),productoIngresado),contenedorCards)
+       
+})
+
+
+
+//FILTROS POR SELECT
+let selecProducto =[]
+contenedorSelect.addEventListener('change',e=>{
+    selecProducto = [...document.querySelectorAll('select')].map(select => select.value)//me devulve en un array el valor del cual halla seleccionado
+   
+    if(selecProducto =='') renderCards(data,contenedorCards)
+    renderCards(marca(select(data,selecProducto),productoIngresado),contenedorCards)
+})
+
+
+let marca = (array, productoIngresado) =>array.filter(productos => productos.marca.toLowerCase().includes(productoIngresado.trim().toLocaleLowerCase()))
+
+let select = (array, selecProducto) =>array.filter(productos => productos.tipo.includes(selecProducto))
+
 

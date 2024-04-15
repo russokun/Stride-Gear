@@ -298,7 +298,7 @@ const data = [
   },
   {
     "tipo": "Camisetas",
-    "modelo": "Puma",
+    "marca": "Puma",
     "equipo": "AC Milan",
     "color": "Negro y Rojo",
     "talla": ["S", "M", "L", "XL"],
