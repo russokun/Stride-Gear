@@ -31,15 +31,16 @@
 
         </div>
        
-        <div id="carrito">
-            <h2>Mi Carrito (<span id="contador-productos">0</span> productos)</h2>
-            <div id="lista-productos">
+        <div id="carrito" class="w-[40%] min-h-[90%] mt-8 border-2 border-white shadow-xl rounded-xl flex justify-center items-center bg-white flex-col gap-8">
+            <h2 class="text-3xl">Mi Carrito (<span id="contador-productos">0</span> productos)</h2>
+            <div id="lista-productos" class="flex flex-col flex-wrap">
                 <!-- Los productos se agregarán aquí dinámicamente -->
             </div>
             <div id="total">
                 Precio de mis productos: $<span id="precio-productos">0.00</span><br/>
                 Descuento aplicado: $<span id="descuento">0.00</span><br/>
-                Total de mis productos: $<span id="total-productos">0.00</span>
+               <b> Total de mis productos: </b> $<span id="total-productos">0.00</span>
+              
             </div>
         </div>
         
@@ -56,15 +57,15 @@
             <div class="metodo-pago">
                 <h3>Crédito</h3>
                 <p>Aceptamos tarjetas de crédito de las siguientes empresas:</p>
-                <div class="w-1/4 flex flex-row ">
-                    <img class=""
+                <div class="flex gap-4 flex-row md:gap-32 lg:gap-48">
+                    <img class="w-[100px]"
                         src="./assests/img/png-transparent-logo-brand-visa-font-visa-blue-text-trademark-thumbnail-removebg-preview.png"
                         alt="">
-                    <img src="./assests/img/png-transparent-mastercard-logo-moneylive-mobile-payment-brand-mastercard-text-orange-logo-removebg-preview.png"
+                    <img class="w-[100px]" src="./assests/img/png-transparent-mastercard-logo-moneylive-mobile-payment-brand-mastercard-text-orange-logo-removebg-preview.png"
                         alt="">
-                    <img src="./assests/img/116-1160176_santander-logo-png-image-purepng-free-transparent-cc0-removebg-preview.png"
+                    <img class="w-[100px]" src="./assests/img/116-1160176_santander-logo-png-image-purepng-free-transparent-cc0-removebg-preview.png"
                         alt="">
-                    <img src="./assests/img/png-clipart-american-express-logo-logo-american-express-brand-font-american-express-logo-blue-text-thumbnail-removebg-preview.png "
+                    <img class="w-[100px]" src="./assests/img/png-clipart-american-express-logo-logo-american-express-brand-font-american-express-logo-blue-text-thumbnail-removebg-preview.png "
                         alt="">
                 </div>
             </div>

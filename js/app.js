@@ -20,7 +20,6 @@ function renderCards(productos, contenedor) {
     contenedor.innerHTML = ''
     let template = document.createElement('template')
 
-
     productos.forEach(obj => {
         template = `
            <div class= 'flex flex-col  w-3/4 gap-3 p-3 bg-white rounded-lg md:w-1/3 lg:w-1/4 hover:scale-110 duration-700 mt-3  shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]' >
@@ -56,10 +55,17 @@ function renderCards(productos, contenedor) {
            </div>       
            </div>
            `
-        contenedor.innerHTML += template
-    });
+           contenedor.innerHTML += template
 
-}
+        });
+        if (productos.length === 0) {
+            contenedorCards.innerHTML = "<h2 class='text-center'>No hay productos que coincidan con su busqueda</h2>";
+        }
+            
+        
+    };
+
+
 //console.log( renderCards(data,contenedorCards));
 renderCards(data, contenedorCards)
 
@@ -83,7 +89,7 @@ let productoIngresado = ''
 search.addEventListener('keyup', e => {
     productoIngresado = e.target.value
     renderCards(marca(select(data, selecProducto), productoIngresado), contenedorCards)
-
+    if (productoIngresado == '') renderCards(data, contenedorCards)
 })
 
 

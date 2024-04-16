@@ -60,23 +60,12 @@ function agregarProducto(nombre, precio, descuento) {
     producto.classList.add('producto');
     producto.innerHTML = `
                 <p>${nombre} - $${precio.toFixed(2)}  (Descuento del ${descuento}%)</p>
-                <button onclick="eliminarProducto(this, ${precio}, ${descuento})">Eliminar</button>
                 <button onclick="disminuirCantidad(this, ${precio}, ${descuento})">-</button> 
                 <span class="cantidad">1 </span> 
                 <button onclick="aumentarCantidad(this, ${precio}, ${descuento})">+</button> 
             `;
     listaProductos.appendChild(producto);
 
-    actualizarCarrito();
-}
-
-function eliminarProducto(button, precio, descuento) {
-    let producto = button.parentNode;
-    let cantidad = parseInt(producto.querySelector('.cantidad').textContent);
-    contadorProductos -= cantidad;
-    precioProductos -= precio * cantidad;
-    descuentoTotal -= (precio * descuento / 100) * cantidad; // Restar el descuento del producto eliminado
-    producto.remove();
     actualizarCarrito();
 }
 
@@ -114,5 +103,7 @@ function actualizarCarrito() {
 }
 
 // interpolar data.propiedad
-agregarProducto('Zapatillas Deportivas', 1000, 10);
-agregarProducto('Camiseta Deportiva', 1200, 10);
+articulos.forEach(producto => {
+    producto.nombre = `${producto.marca} ${producto.modelo}`;
+    agregarProducto(producto.nombre, producto.precio, producto.descuento);
+})
