@@ -300,7 +300,7 @@ const data = [
   },
   {
     "tipo": "Camisetas",
-    "modelo": "Puma",
+    "marca": "Puma",
     "equipo": "AC Milan",
     "color": "Negro y Rojo",
     "talla": ["S", "M", "L", "XL"],
@@ -381,6 +381,7 @@ const data = [
     "imagen": "https://acdn.mitiendanube.com/stores/001/220/451/products/nike-jordan-xxxiii-2022-04-04t215806-2811-1098cb71fd288e298a16491210604442-640-0.png",
     "descripcion": "La camiseta de fútbol de Boca Juniors, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
     "precio_total": 70
+
   },
   {
     "tipo": "Camisetas",
@@ -450,7 +451,7 @@ const data = [
     "descuento": 0,
     "descripcion": "La remera deportiva Under Armour Tech ofrece un ajuste cómodo y transpirable para tus sesiones de entrenamiento.",
     "precio_total": 30,
-    "imagen": "https://pacogarcia.vtexassets.com/arquivos/ids/193774-800-1067?v=638334086725930000&width=800&height=1067&aspect=true "
+    "imagen":"https://pacogarcia.vtexassets.com/arquivos/ids/193774-800-1067?v=638334086725930000&width=800&height=1067&aspect=true "
   },
   {
     "tipo": "Remeras",
