@@ -14,6 +14,11 @@ if (productoEncontrado.descuento) {
             <p class="text-lg">${productoEncontrado.descuento}%</p>
         </div>
     `
+}else{
+    descuentoSection = `<div class="flex justify-between items-center mb-4">
+    <p class="text-lg font-bold">Descuento:</p>
+    <p class="text-lg">El producto no tiene descuento</p>
+</div>`
 }
 
 mainDetail.innerHTML = `
