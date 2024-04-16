@@ -37,7 +37,7 @@ function renderCards(productos, contenedor) {
            <img class='w-[50px]' src="./assests/img/compra_carrito_icon_209798.png" alt="">
        </button> 
 
-           <a href="./detalles.html?id=${obj.id}" class= "bg-black text-white p-2 w-2/4 text-center rounded-xl ">Detalles</a>          
+                  
            ${!productoPush.includes(obj.id) ?
 
                `
@@ -109,11 +109,40 @@ contenedorCards.addEventListener('click', e => {
     let productosID = e.target.dataset.compra
     //console.log(productosID);
     if (productosID) {
-        if (!productoPush.includes(productosID))
-            productoPush.push(productosID)
-        else
-            productoPush = productoPush.filter(id => id != productosID)
+        if (!productoPush.includes(productosID)){
 
+            productoPush.push(productosID)
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Producto agregado al carrito",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+        else{
+            productoPush = productoPush.filter(id => id != productosID)
+            Swal.fire({
+                title: "¿Deseas eliminar del carrito?",
+            
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                cancelButtonText : "Cancelar",
+                confirmButtonText: "Si, eliminalo!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Eliminado!",
+                        text: "Su producto ha sido eliminado!",
+                        icon: "success"
+                    });
+                }
+            }); 
+        
+            
+        }
     }
     localStorage.setItem('productosCarritos', JSON.stringify(productoPush))
     console.log(productoPush);

@@ -39,28 +39,7 @@ mainDetail.innerHTML = `
         <img class="h-[240px] w-[240px] object-contain rounded-lg shadow-md md:h-[360px] w-[360px]" src="${productoEncontrado.imagen}" alt="">
     </div>
 </div>
-<div class="w-full flex justify-center mb-4 md:justify-end items-end mr-4 mt-4 lg:mt-4 justify-end items-end">
-    <button id="boton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg">
-        Agregar al carrito
-    </button>
-</div>
+
 `
 
-let boton = document.getElementById('boton')
-
-boton.addEventListener('click', () => {
-    let carrito = JSON.parse(localStorage.getItem('carritoDetails')) || [];
-
-    if (productoEncontrado.stock > 0) {
-        carrito.push(productoEncontrado.id);
-        productoEncontrado.stock--;
-        localStorage.setItem('carritoDetails', JSON.stringify(carrito));
-        alert('Producto agregado al carrito');
-
-        // Llamar a la función que muestra los productos en el carrito
-        mostrarProductosEnCarrito();
-    } else {
-        alert('¡Lo siento! No hay suficiente stock disponible para agregar este producto al carrito.');
-    }
-});
 
