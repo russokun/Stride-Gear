@@ -9,31 +9,16 @@
     <title>Stride Gear</title>
 </head>
 <body>
-    <header class="h-[23vh] bg-[#99C2EC]">
-        <nav class="p-5 shadow md:flex md:items-center md:justify-between ">
-            <div class="flex justify-between items-center">
-                <span class="cursor-pointer">
-                    <img class="h-[150px] inline" src="./assests/img/logoconfondo.png" alt="StrideGearLogo">
-                    
-                </span>
-                <span class="text-4xl cursor-pointer mx-2 md:hidden block">
-                    <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-                </span>
-            </div>
-            <ul class="md:flex md:items-center z-[1] md:z-auto md:static absolute bg-transparent w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-2 md:opacity-100 opacity-0 top-[200px] transition-all ease-in-out duration-500">
-                <li class="mx-4 my-6 md:my-0">
-                    <a href="#" class="bg-blue-900 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded  duration-500">INICIO</a>
-                </li>
-
-                <li class="mx-4 my-6 md:my-0">
-                    <a href="./productos.html" class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded  duration-500">PRODUCTOS</a>
-                </li>
-                <li class="mx-4 my-6 md:my-0">
-                    <a href="./contacto.html" class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded duration-500">CONTACTO</a>
-                </li>
-            </ul>
-        </nav>
-        
+    <header class="flex flex-col w-full items-center justify-center md:flex-wrap flex-row justify-around">
+        <section class="bg-[#99C2EC] flex flex-col justify-between items-center w-full md:flex-row">
+            <img class="h-[125px] w-[125px] lg:h-[150px] lg:w-[150px]" src="./assests/img/logoconfondo.png" alt="logo">
+            <!-- <h1>Stride Gear</h1> -->
+            <nav class="flex gap-4 mb-2 md:mr-8 gap-8">
+                <a class="bg-blue-900 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="#">INICIO</a>
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./productos.html">PRODUCTOS</a>
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./contacto.html">CONTACTO</a>
+            </nav>
+        </section>
     </header>
     <main class="bg-orange-100 w-full h-[auto] flex flex-col items-center">
         <div class="flex flex-col w-[75%] justify-center items-center">

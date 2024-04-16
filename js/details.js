@@ -35,6 +35,10 @@ mainDetail.innerHTML = `
             <p class="text-lg font-bold">Stock:</p>
             <p class="text-lg">${productoEncontrado.stock}</p>
         </div>
+        <div class="flex justify-between items-center mb-4">
+            <p class="text-lg font-bold">Talles:</p>
+            <p class="text-lg">${productoEncontrado.talles} </p>
+        </div>
         <div class="flex justify-between items-center">
             <p class="text-lg font-bold">Precio Total:</p>
             <p class="text-lg">$${productoEncontrado.precio_total}</p>

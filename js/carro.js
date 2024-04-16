@@ -1,9 +1,12 @@
 let shoppingContainer = document.getElementById('shoppingContainer')
-let carrito = []
+let carrito = JSON.parse(localStorage.getItem('productosCarritos')) || []
 
-carrito = JSON.parse(localStorage.getItem('productosCarritos'))
 function renderCarrito(array, contenedor) {
-
+    if(array.length == 0){
+        contenedor.innerHTML = `<h2>No hay productos en su bolsa</h2>`
+        return;
+    }
+     
     contenedor.innerHTML = ''
     let template = ''
     array.forEach(obj => {
@@ -13,7 +16,9 @@ function renderCarrito(array, contenedor) {
         <h2>${obj.marca} ${obj.modelo} </h2>
         <h3> Precio: ${obj.precio}</h3>
         <h3>Cantidad disponible: ${obj.stock}</h3>
-        
+        <button class='flex ' data-deleteCard='${obj.id}'>
+        <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${obj.id}'>
+        </button>
    </div>
     
     </div>`
@@ -27,6 +32,17 @@ if (carrito) {
     articulos = data.filter(prod => carrito.includes(prod.id))
     renderCarrito(articulos, shoppingContainer)
 }
+
+shoppingContainer.addEventListener('click',(e) => {
+    let id = e.target.dataset.deleteCard
+    if (id){
+        carrito = carrito.filter(prod => prod != id)  
+        id = articulos.filter(producto => id != producto.id)
+        articulos = id
+    }
+    localStorage.setItem('productosCarritos', JSON.stringify(carrito))
+    renderCarrito(id, shoppingContainer)
+})
 
 let contadorProductos = 0;
 let precioProductos = 0;

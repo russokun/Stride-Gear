@@ -15,13 +15,13 @@
 
     <header class="flex flex-col w-full md:flex-wrap flex-row justify-around">
         <section class="bg-[#99C2EC] flex flex-col justify-between items-center w-full md:flex-row">
-            <img class="h-[150px] w-[150px]" src="./assests/img/logoconfondo.png" alt="logo">
+            <img class="h-[125px] w-[125px] lg:h-[150px] lg:w-[150px]" src="./assests/img/logoconfondo.png" alt="logo">
             <!-- <h1>Stride Gear</h1> -->
-            <nav class="flex gap-4 mb-2 md:mr-8 gap-8 items-center">
+            <nav class="flex gap-4 mb-2 md:mr-8 md:gap-8 items-center justify-center flex-wrap">
                 <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./index.html">INICIO</a>
                 <a class="bg-blue-900 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="#">PRODUCTOS</a>
                 <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./contacto.html">CONTACTO</a>
-                <a class="w-[50px] h-[50px]" href="./carrito.html"><img src="./assests/img/bag_buy_cart_market_shop_shopping_tote_icon_123191.png" alt=""></a>
+                <a class="self-center w-[50px] h-[50px]" href="./carrito.html"><img src="./assests/img/bag_buy_cart_market_shop_shopping_tote_icon_123191.png" alt=""></a>
             </nav>
         </section>
     </header>
@@ -29,16 +29,16 @@
         <!-- CONTENEDOR PRINCIPAL -->
         <div>
             <!-- FILTROS -->
-            <div class="min-h-20 bg-[#99C2EC]  flex flex-col justify-center items-center gap-5 lg:flex-row">
+            <div class="min-h-20 bg-[#99C2EC] flex flex-col justify-center items-center gap-5 lg:flex-row">
                 <!-- SEARCH -->
-                <div class="flex aling-center">
-                    <label for="" class="text-black text-2xl ">Busque por marca
+                <div class="flex items-center justify-center ml-16">
+                    <label class="text-black text-2xl ">Busque por marca
                         <input type="text" id="search" class="text-black ">
                     </label>
                 </div>
                 
-                <!-- INPUT -->
-                <div class="ml-5">
+                <!-- SELECT -->
+                <div class="ml-4 mb-4">
                     <select name="product" id="contenedorSelect">
                         <option value="" disabled selected>Seleccione la categoria</option>
                         <option value="">Todas</option>
