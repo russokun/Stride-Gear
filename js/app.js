@@ -31,6 +31,12 @@ function renderCards(productos, contenedor) {
            
            <p class="pl-4 pb-[10px]"> ${obj.descripcion.slice(0, 40)}...</p>
            <div class='flex flex-row justify-around'>
+
+           <a href="./detalles.html?id=${obj.id}" class= "bg-black text-white p-2 w-2/4 text-center rounded-xl ">Detalles</a>
+           <button>
+           <img class='w-[50px]' src="./assests/img/compra_carrito_icon_209798.png" alt="">
+       </button> 
+
            <a href="./detalles.html?id=${obj.id}" class= "bg-black text-white p-2 w-2/4 text-center rounded-xl ">Detalles</a>          
            ${!productoPush.includes(obj.id) ?
 
@@ -46,6 +52,7 @@ function renderCards(productos, contenedor) {
                </button> 
                `
         }
+
            </div>       
            </div>
            `
