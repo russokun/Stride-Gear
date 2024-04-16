@@ -49,13 +49,18 @@ mainDetail.innerHTML = `
 let boton = document.getElementById('boton')
 
 boton.addEventListener('click', () => {
-    let carrito = JSON.parse(localStorage.getItem('carritoDetails')) || [] // Verificar si la cantidad a agregar es menor o igual al stock disponible
-    if (productoEncontrado.stock > 0) { // Se puede agregar al menos una unidad al carrito
-        carrito.push(productoEncontrado.id) // Solo se agrega el ID del producto
-        productoEncontrado.stock-- // Reducir el stock en una unidad
-        localStorage.setItem('carritoDetails', JSON.stringify(carrito))
+    let carrito = JSON.parse(localStorage.getItem('carritoDetails')) || [];
+
+    if (productoEncontrado.stock > 0) {
+        carrito.push(productoEncontrado.id);
+        productoEncontrado.stock--;
+        localStorage.setItem('carritoDetails', JSON.stringify(carrito));
         alert('Producto agregado al carrito');
-    } else { // No hay stock disponible para agregar al carrito
-        alert('¡Lo siento! No hay suficiente stock disponible para agregar este producto al carrito.')
+
+        // Llamar a la función que muestra los productos en el carrito
+        mostrarProductosEnCarrito();
+    } else {
+        alert('¡Lo siento! No hay suficiente stock disponible para agregar este producto al carrito.');
     }
-})
+});
+
