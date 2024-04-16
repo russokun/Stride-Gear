@@ -1,14 +1,23 @@
-let detalleContainer = document.getElementById('detalleContainer');
-let urlSearch = new URLSearchParams(location.search);
-let id = urlSearch.get('id');
-console.log(id);
-let producto = (array, key) => array.find(obj => obj.id == key);
-console.log(producto(data, id));
+let mainDetail = document.getElementById('mainDetail')
+let urlSearch = new URLSearchParams(location.search)
+let id = urlSearch.get('id')
+console.log(id)
+let producto = (array, key) => array.find(obj => obj.id == key)
+console.log(producto(data, id))
 
 let productoEncontrado = producto(data, id);
+let descuentoSection = ''
+if (productoEncontrado.descuento) {
+    descuentoSection = `
+        <div class="flex justify-between items-center mb-4">
+            <p class="text-lg font-bold">Descuento:</p>
+            <p class="text-lg">${productoEncontrado.descuento}%</p>
+        </div>
+    `
+}
 
-detalleContainer.innerHTML = `
-<div class="flex flex-col md:flex-row items-center justify-center rounded-lg shadow-lg p-8 space-y-8 md:space-x-8">
+mainDetail.innerHTML = `
+<div class="flex flex-col mt-4 w-11/12 h-11/12 bg-white md:flex-row items-center justify-center rounded-lg shadow-lg p-8 space-y-8 md:space-x-8">
     <div class="md:w-1/2">
         <h1 class="text-3xl font-bold mb-4">${productoEncontrado.marca} ${productoEncontrado.modelo}</h1>
         <p class="text-lg mb-4">${productoEncontrado.descripcion}</p>
@@ -16,10 +25,7 @@ detalleContainer.innerHTML = `
             <p class="text-lg font-bold">Precio:</p>
             <p class="text-lg">$${productoEncontrado.precio}</p>
         </div>
-        <div class="flex justify-between items-center mb-4">
-            <p class="text-lg font-bold">Descuento:</p>
-            <p class="text-lg">${productoEncontrado.descuento}%</p>
-        </div>
+        ${descuentoSection}
         <div class="flex justify-between items-center mb-4">
             <p class="text-lg font-bold">Stock:</p>
             <p class="text-lg">${productoEncontrado.stock}</p>
@@ -31,20 +37,25 @@ detalleContainer.innerHTML = `
     </div>
     <div class="md:w-1/2 flex flex-end justify-end">
         <img class="h-[240px] w-[240px] object-contain rounded-lg shadow-md md:h-[360px] w-[360px]" src="${productoEncontrado.imagen}" alt="">
-        </div>
-        </div>
-        <div class="w-full flex justify-center mb-4 md:justify-end items-end mr-4 mt-4 lg:mt-4 justify-end items-end">
-            <button id="boton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg">
-                Agregar al carrito
-            </button>
-        </div>
-`;
+    </div>
+</div>
+<div class="w-full flex justify-center mb-4 md:justify-end items-end mr-4 mt-4 lg:mt-4 justify-end items-end">
+    <button id="boton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg">
+        Agregar al carrito
+    </button>
+</div>
+`
 
-let boton = document.getElementById('boton');
+let boton = document.getElementById('boton')
 
 boton.addEventListener('click', () => {
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push(productoEncontrado);
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert('Producto agregado al carrito');
-});
+    let carrito = JSON.parse(localStorage.getItem('carritoDetails')) || [] // Verificar si la cantidad a agregar es menor o igual al stock disponible
+    if (productoEncontrado.stock > 0) { // Se puede agregar al menos una unidad al carrito
+        carrito.push(productoEncontrado.id) // Solo se agrega el ID del producto
+        productoEncontrado.stock-- // Reducir el stock en una unidad
+        localStorage.setItem('carritoDetails', JSON.stringify(carrito))
+        alert('Producto agregado al carrito');
+    } else { // No hay stock disponible para agregar al carrito
+        alert('¡Lo siento! No hay suficiente stock disponible para agregar este producto al carrito.')
+    }
+})
