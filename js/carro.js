@@ -17,11 +17,14 @@ function renderInput(productos, contenedor) {
   // Recorrer los productos y renderizar cada uno
   productos.forEach(producto => {
     let template = `
-          <div class="flex flex-wrap gap-4 items-center justify-center">
+          <div class="flex flex-col gap-4 items-center justify-center shadow-[0_3px_10px_rgb(0,0,0,0.2)] p-5 w-[250px] h-[300px]">
               <img class="w-[75px]" src="${producto.imagen}" alt="">
-              <h2>${producto.marca} ${producto.modelo} ${producto.id}</h2>
-              <p data-precio='${producto.id}'> - $${producto.precio}  (Descuento del ${producto.descuento}%)</p>
-              <div class='flex flex-row items-center'>
+              
+              <h2 class = "lg:text-2xl lg:text-center" >${producto.marca} ${producto.modelo}</h2>
+              <p class = "lg:text-xl" data-precio='${producto.id}'>  $${producto.precio}  (Descuento del ${producto.descuento}%) </p>
+              
+              <div class = "flex gap-5 items-center " >
+              <div class='flex flex-row items-center shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] '>
                   <button class='p-3' data-boton-menos='${producto.id}'>-</button>
                   <input type="text" class="w-[20px]" name="" max='100' min='1' value='1' id="" data-cantidad='${producto.id}'>
                   <button class='p-3' data-boton-mas='${producto.id}'>+</button>
@@ -29,6 +32,7 @@ function renderInput(productos, contenedor) {
               <button class='flex' data-deleteCard='${producto.id}'>
                   <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${producto.id}'>
               </button>
+              </div>
           </div>
       `;
     // Agregar el template al contenedor
