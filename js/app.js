@@ -98,21 +98,27 @@ renderSelect(tipoDeIndumentaria, contenedorSelect);
 //FILTROS POR SEARCH
 let productoIngresado = ''
 search.addEventListener('keyup', e => {
-    productoIngresado = e.target.value
-    renderCards(marca(select(data, selecProducto), productoIngresado), contenedorCards)
-    if (productoIngresado == '') renderCards(data, contenedorCards)
-})
+    productoIngresado = e.target.value;
+    if (selecProducto.includes('Todos')) {
+        renderCards(marca(data, productoIngresado), contenedorCards);
+    } else {
+        renderCards(marca(select(data, selecProducto), productoIngresado), contenedorCards);
+    }
+});
+
 
 
 
 //FILTROS POR SELECT
 let selecProducto = []
 contenedorSelect.addEventListener('change', e => {
-    selecProducto = [...document.querySelectorAll('select')].map(select => select.value)//me devulve en un array el valor del cual halla seleccionado
-
-    if (selecProducto == '') renderCards(data, contenedorCards)
-    renderCards(marca(select(data, selecProducto), productoIngresado), contenedorCards)
-})
+    selecProducto = [...document.querySelectorAll('select')].map(select => select.value);
+    if (selecProducto.includes('Todos')) {
+        renderCards(data, contenedorCards);
+    } else {
+        renderCards(marca(select(data, selecProducto), productoIngresado), contenedorCards);
+    }
+});
 
 
 

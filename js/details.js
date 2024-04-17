@@ -16,14 +16,14 @@ if (productoEncontrado.descuento) {
         </div>
     `
 }else{
-    descuentoSection = `<div class="flex justify-between items-center mb-4">
+    descuentoSection = `<div class="flex justify-between items-center mb-4 space-y-8 md:space-x-16 ">
     <p class="text-lg font-bold">Descuento:</p>
-    <p class="text-lg">El producto no tiene descuento</p>
+    <p class="text-lg ">El producto no tiene descuento</p>
 </div>`
 }
 
 mainDetail.innerHTML = `
-<div class="flex flex-col mt-4 w-11/12 h-11/12 bg-white md:flex-row items-center justify-center rounded-lg shadow-lg p-8 space-y-8 md:space-x-8">
+<div class="flex flex-col  w-11/12 h-11/12 bg-white md:flex-row items-center justify-center rounded-lg shadow-lg p-8 space-y-8 md:space-x-8">
     <div class="md:w-1/2">
         <h1 class="text-3xl font-bold mb-4">${productoEncontrado.marca} ${productoEncontrado.modelo}</h1>
         <p class="text-lg mb-4">${productoEncontrado.descripcion}</p>
