@@ -1,9 +1,11 @@
+import { marca, select } from "./modulo.js";
 //console.log(data);
 let contenedorCards = document.getElementById('contenedorCards')
 let contenedorSelect = document.getElementById('contenedorSelect')
 let search = document.getElementById('search')
 let productosAgregados = JSON.parse(localStorage.getItem('productosCarritos'))
 let productoPush = []
+
 if (productosAgregados) {
     productoPush = productosAgregados
 }
@@ -16,8 +18,11 @@ let tipoDeIndumentaria = [... new Set(data.map(indumentaria => indumentaria.tipo
 
 //CREACION Y RENDERIZADO DE CARDS
 function renderCards(productos, contenedor) {
-
     contenedor.innerHTML = ''
+    if (productos.length === 0) {
+        renderNoResultsMessage(contenedor);
+        return;
+    }
     let template = document.createElement('template')
 
     productos.forEach(obj => {
@@ -58,31 +63,37 @@ function renderCards(productos, contenedor) {
            contenedor.innerHTML += template
 
         });
-        if (productos.length === 0) {
-            contenedorCards.innerHTML = "<h2 class='text-center'>No hay productos que coincidan con su busqueda</h2>";
-        }
             
         
     };
-
+    const renderNoResultsMessage = (contenedor) => {
+        contenedor.innerHTML = "<h2 class='text-center'>No hay productos que coincidan con su búsqueda</h2>";
+    };
 
 //console.log( renderCards(data,contenedorCards));
 renderCards(data, contenedorCards)
 
 //CREACION Y RENDERIZACION DEL SELECT
-function renderSelect(indumentaria, contenedor) {
-
-    let template = document.createElement('template')
-
-    indumentaria.forEach(obj => {
-        template = `
-        <option value="${obj}">${obj}</option>
-        `
-        contenedor.innerHTML += template
-    });
-
+const renderSelect = (indumentaria, contenedor) => {
+    const optionsHTML = createSelectOptionsWithAll(indumentaria)
+    contenedor.innerHTML = optionsHTML
 }
-renderSelect(tipoDeIndumentaria, contenedorSelect)
+
+const createSelectOptionsWithAll = (indumentaria) => {
+    const indumentariaConTodos = ['Todos', ...indumentaria]
+    return createSelectOptions(indumentariaConTodos)
+}
+
+const createSelectOptions = (indumentaria) => {
+    let options = ''
+    indumentaria.forEach(obj => {
+        options += `<option value="${obj}">${obj}</option>`
+    })
+    return options
+}
+
+renderSelect(tipoDeIndumentaria, contenedorSelect);
+
 
 //FILTROS POR SEARCH
 let productoIngresado = ''
@@ -104,9 +115,7 @@ contenedorSelect.addEventListener('change', e => {
 })
 
 
-let marca = (array, productoIngresado) => array.filter(productos => productos.marca.toLowerCase().includes(productoIngresado.trim().toLocaleLowerCase()))
 
-let select = (array, selecProducto) => array.filter(productos => productos.tipo.includes(selecProducto))
 
 
 //localStorage

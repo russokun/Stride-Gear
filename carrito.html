@@ -11,11 +11,11 @@
 </head>
 
 <body class="m-0 p-0 box-border flex flex-col min-h-screen">
-    <header class="flex flex-col w-full md:flex-wrap flex-row justify-around">
+    <header class="flex w-full md:flex-wrap flex-row justify-around">
         <section class="bg-[#99C2EC] flex flex-col justify-between items-center w-full md:flex-row">
             <img class="h-[125px] w-[125px] lg:h-[150px] lg:w-[150px]" src="./assests/img/logoconfondo.png" alt="logo">
             <!-- <h1>Stride Gear</h1> -->
-            <nav class="flex gap-4 mb-2 md:mr-8 gap-8">
+            <nav class="flex mb-2 md:mr-8 gap-8">
                 <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./index.html">INICIO</a>
                 <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./productos.html">PRODUCTOS</a>
                 <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./contacto.html">CONTACTO</a>
@@ -30,7 +30,7 @@
             class="w-[60%] min-h-[90%]  shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] rounded-xl flex justify-center items-center flex-col gap-8 md:flex-row md:flex-wrap bg-[#EADBC8] ">
 
         </div>
-       
+    
         <div id="carrito" class="w-[40%] min-h-[90%] mt-8 border-2 border-white shadow-xl rounded-xl flex justify-center items-center bg-white flex-col gap-8 p-4">
             <h2 class="text-3xl">Mi Carrito (<span id="contador-productos">0</span> productos)</h2>
             <div id="lista-productos" class="flex flex-col flex-wrap">
@@ -39,25 +39,25 @@
             <div id="total">
                 Precio de mis productos: $<span id="precio-productos">0.00</span><br/>
                 Descuento aplicado: $<span id="descuento">0.00</span><br/>
-               <b> Total de mis productos: </b> $<span id="total-productos">0.00</span>
-              
+                <b> Total de mis productos: </b> $<span id="total-productos">0.00</span>
             </div>
+           
         </div>
         
-        <div id="metodosPagoContainer" class="w-2/3 my-10 bg-white p-6 rounded-lg ">
-            <h3><b>Metodos de pago</b></h3>
-            <div class="metodo-pago">
-                <h3>Efectivo</h3>
+        <div id="metodosPagoContainer" class="w-2/3 my-10 bg-white p-6 rounded-lg">
+            <h3 class="text-center"><b>Metodos de pago</b></h3>
+            <div class="metodo-pago ">
+                <b><h3>Efectivo:</h3></b>
                 <p>¡Aceptamos efectivo en todas nuestras transacciones!</p>
             </div>
-            <div class="metodo-pago">
-                <h3>Débito</h3>
+            <div class="metodo-pago ">
+                <b><h3>Débito:</h3></b>
                 <p>Puedes pagar con tarjeta de débito en nuestra tienda.</p>
             </div>
-            <div class="metodo-pago">
-                <h3>Crédito</h3>
+            <div class="metodo-pago ">
+                <b><h3>Crédito:</h3></b>
                 <p>Aceptamos tarjetas de crédito de las siguientes empresas:</p>
-                <div class="flex gap-4 flex-row md:gap-32 lg:gap-48">
+                <div class="flex gap-4 flex-row justify-between flex-wrap">
                     <img class="w-[100px]"
                         src="./assests/img/png-transparent-logo-brand-visa-font-visa-blue-text-trademark-thumbnail-removebg-preview.png"
                         alt="">

@@ -1,8 +1,9 @@
+
 let mainDetail = document.getElementById('mainDetail')
 let urlSearch = new URLSearchParams(location.search)
 let id = urlSearch.get('id')
 console.log(id)
-let producto = (array, key) => array.find(obj => obj.id == key)
+import { producto } from "./modulo.js";
 console.log(producto(data, id))
 
 let productoEncontrado = producto(data, id);
