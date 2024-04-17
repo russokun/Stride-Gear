@@ -1,100 +1,118 @@
-let shoppingContainer = document.getElementById('shoppingContainer')
-let carrito = JSON.parse(localStorage.getItem('productosCarritos')) || []
-let listaProductos = document.getElementById('lista-productos');
+let carrito = JSON.parse(localStorage.getItem("productosCarritos")) || [];
+let productosCarrito = data.filter((producto) => carrito.includes(producto.id));
+
+let listaProductos = document.getElementById("lista-productos");
 let contadorProductos = 0;
 let precioProductos = 0;
 let descuentoTotal = 0;
 
-
-
-function renderCarrito(array, contenedor) {
-    if (array.length == 0) {
-        contenedor.innerHTML = `<h2>No hay productos en su bolsa</h2>`
-        return;
-    }
-
-    contenedor.innerHTML = ''
-    let template = ''
-    array.forEach(obj => {
-        template = `
-    <div class="flex flex-col   p-4 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]  my-4 bg-white rounded-lg items-center ">
-        <img class="w-[100px]" src="${obj.imagen}" alt="">
-        <h2>${obj.marca} ${obj.modelo} </h2>
-        <h3> Precio: ${obj.precio}</h3>
-        <h3>Cantidad disponible: ${obj.stock}</h3>
-        <button class='flex ' data-deleteCard='${obj.id}'>
-        <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${obj.id}'>
-        </button>
-   </div>
-    
-    </div>`
-        contenedor.innerHTML += template
-
-    });
-}
-let articulos = []
-
 if (carrito) {
-    articulos = data.filter(prod => carrito.includes(prod.id))
-    renderCarrito(articulos, shoppingContainer)
+  renderInput(productosCarrito, listaProductos);
 }
 
+function renderInput(productos, contenedor) {
+  // Limpiar el contenido del contenedor
+  contenedor.innerHTML = '';
 
+  // Recorrer los productos y renderizar cada uno
+  productos.forEach(producto => {
+    let template = `
+          <div class="flex flex-wrap gap-4 items-center justify-center">
+              <img class="w-[75px]" src="${producto.imagen}" alt="">
+              <h2>${producto.marca} ${producto.modelo} ${producto.id}</h2>
+              <p data-precio='${producto.id}'> - $${producto.precio}  (Descuento del ${producto.descuento}%)</p>
+              <div class='flex flex-row items-center'>
+                  <button class='p-3' data-boton-menos='${producto.id}'>-</button>
+                  <input type="text" class="w-[20px]" name="" max='100' min='1' value='1' id="" data-cantidad='${producto.id}'>
+                  <button class='p-3' data-boton-mas='${producto.id}'>+</button>
+              </div>
+              <button class='flex' data-deleteCard='${producto.id}'>
+                  <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${producto.id}'>
+              </button>
+          </div>
+      `;
+    // Agregar el template al contenedor
+    contenedor.innerHTML += template;
+  });
 
-shoppingContainer.addEventListener('click', (e) => {
-    let id = e.target.dataset.deleteCard
-    if (id) {
-        carrito = carrito.filter(prod => prod != id)
-        id = articulos.filter(producto => id != producto.id)
-        articulos = id
-    }
-    localStorage.setItem('productosCarritos', JSON.stringify(carrito))
-    renderCarrito(id, shoppingContainer)
-    location.reload()
+  // Aplicar eventos a los botones
+  contenedor.querySelectorAll("[data-boton-menos]").forEach(boton => {
+    boton.addEventListener("click", disminuirCantidad);
+  });
 
+  contenedor.querySelectorAll("[data-boton-mas]").forEach(boton => {
+    boton.addEventListener("click", aumentarCantidad);
+  });
 
-})
+  contenedor.querySelectorAll("[data-deleteCard]").forEach(boton => {
+    boton.addEventListener("click", eliminarProducto);
+  });
+}
 
-
-
-function agregarProducto(nombre, precio, descuento,stock) {
-    contadorProductos++;
-    let precioConDescuento = precio - (precio * descuento / 100);
-    precioProductos += precioConDescuento;
-    descuentoTotal += (precio * descuento / 100);
-    let producto = document.createElement('div');
-    producto.classList.add('producto');
-    producto.innerHTML = `
-                <p>${nombre} - $${precio.toFixed(2)}  (Descuento del ${descuento}%)</p>
-                 
-                <input  class='border border-black w-[50px]' type="number" name="" max="${stock}" min="1" id="" onchange="actualizarCantidad(this, ${precio}, ${descuento})">
-                
-            `;
-    listaProductos.appendChild(producto);
-
+// Función para eliminar un producto del carrito
+function eliminarProducto(e) {
+  let id = e.target.dataset.deleteCard;
+  if (id) {
+    carrito = carrito.filter((prod) => prod !== id);
+    localStorage.setItem("productosCarritos", JSON.stringify(carrito));
+    productosCarrito = productosCarrito.filter(producto => producto.id !== id);
+    renderInput(productosCarrito, listaProductos);
     actualizarCarrito();
-}
-function actualizarCantidad(input, precio, descuento) {
-    const cantidad = parseInt(input.value); // Obtenemos la cantidad actual del input y la convertimos a un número entero
-    const precioDescuento = precio - (precio * (descuento / 100)); // Calculamos el precio con el descuento aplicado
-    const nuevoValor = precioDescuento * cantidad; // Calculamos el nuevo valor basado en la cantidad y el precio con descuento
-
-    // Actualizamos el valor del input con el nuevo valor
-    input.value = nuevoValor.toFixed(2); // Usamos toFixed(2) para redondear el nuevo valor a 2 decimales
+  }
 }
 
+// Función para aumentar la cantidad de un producto en el carrito
+function aumentarCantidad(e) {
+  let id = e.target.dataset.botonMas;
+  let inputCantidad = document.querySelector(`input[data-cantidad="${id}"]`);
+  let producto = productosCarrito.find(prod => prod.id === id);
+  if (inputCantidad && producto) {
+    if (parseInt(inputCantidad.value) < producto.stock) {
+      inputCantidad.value = parseInt(inputCantidad.value) + 1;
+      actualizarCarrito();
+    }
+  }
+}
 
+// Función para disminuir la cantidad de un producto en el carrito
+function disminuirCantidad(e) {
+  let id = e.target.dataset.botonMenos;
+  let inputCantidad = document.querySelector(`input[data-cantidad="${id}"]`);
+  if (inputCantidad) {
+    if (parseInt(inputCantidad.value) > 1) {
+      inputCantidad.value = parseInt(inputCantidad.value) - 1;
+      actualizarCarrito();
+    }
+  }
+}
+
+// Función para actualizar el carrito de compras y los precios
 function actualizarCarrito() {
-    let precioConDescuento = precioProductos - descuentoTotal;
+  // Resetear los valores
+  contadorProductos = 0;
+  precioProductos = 0;
+  descuentoTotal = 0;
 
-    document.getElementById('descuento').textContent = descuentoTotal.toFixed(2);
-    document.getElementById('contador-productos').textContent = contadorProductos;
-    document.getElementById('precio-productos').textContent = precioProductos.toFixed(2);;
-    document.getElementById('total-productos').textContent = precioConDescuento.toFixed(2);
+  // Recorrer los productos en el carrito y calcular los totales
+  productosCarrito.forEach(producto => {
+    contadorProductos++;
+    let cantidad = parseInt(document.querySelector(`input[data-cantidad="${producto.id}"]`).value);
+    precioProductos += producto.precio * cantidad;
+    descuentoTotal += (producto.precio * producto.descuento / 100) * cantidad;
+  });
+
+  // Actualizar los elementos en el DOM con los nuevos valores
+  document.getElementById("contador-productos").textContent = contadorProductos;
+  document.getElementById("precio-productos").textContent = precioProductos.toFixed(2);
+  document.getElementById("descuento").textContent = descuentoTotal.toFixed(2);
+
+  // Calcular el precio final con descuento
+  let precioConDescuento = precioProductos - descuentoTotal;
+  document.getElementById("total-productos").textContent = precioConDescuento.toFixed(2);
+
+  // Guardar el estado actual del carrito en localStorage
+  localStorage.setItem("productosCarritos", JSON.stringify(carrito));
 }
 
-// interpolar data.propiedad
-articulos.forEach(producto => {
-    producto.nombre = ` ${producto.marca} ${producto.modelo} ${producto.id} `;
-    agregarProducto(producto.nombre, producto.precio, producto.descuento);
-})
+// Llamada inicial para cargar el carrito al cargar la página
+actualizarCarrito();

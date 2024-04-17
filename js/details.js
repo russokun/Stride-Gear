@@ -1,8 +1,9 @@
+
 let mainDetail = document.getElementById('mainDetail')
 let urlSearch = new URLSearchParams(location.search)
 let id = urlSearch.get('id')
 console.log(id)
-let producto = (array, key) => array.find(obj => obj.id == key)
+import { producto } from "./modulo.js";
 console.log(producto(data, id))
 
 let productoEncontrado = producto(data, id);
@@ -45,7 +46,7 @@ mainDetail.innerHTML = `
         </div>
     </div>
     <div class="md:w-1/2 flex flex-end justify-end">
-        <img class="h-[240px] w-[240px] object-contain rounded-lg shadow-md md:h-[360px] w-[360px]" src="${productoEncontrado.imagen}" alt="">
+        <img class="h-[240px] object-contain rounded-lg shadow-md md:h-[360px] w-[360px]" src="${productoEncontrado.imagen}" alt="">
     </div>
 </div>
 
