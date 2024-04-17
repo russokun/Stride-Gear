@@ -33,7 +33,7 @@ function renderCards(productos, contenedor) {
 
            <a href="./detalles.html?id=${obj.id}" class= "bg-black text-white p-2 w-2/4 text-center rounded-xl ">Detalles</a>
            <button>
-           <img class='w-[50px]' src="./assests/img/compra_carrito_icon_209798.png" alt="">
+           <img class='w-[50px]' src="" alt="">
        </button> 
 
                   
@@ -132,7 +132,7 @@ contenedorCards.addEventListener('click', e => {
                 title: "¿Deseas eliminar del carrito?",
             
                 icon: "warning",
-                showCancelButton: true,
+                showCancelButton: false,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
                 cancelButtonText : "Cancelar",

@@ -1,17 +1,23 @@
 let shoppingContainer = document.getElementById('shoppingContainer')
 let carrito = JSON.parse(localStorage.getItem('productosCarritos')) || []
+let listaProductos = document.getElementById('lista-productos');
+let contadorProductos = 0;
+let precioProductos = 0;
+let descuentoTotal = 0;
+
+
 
 function renderCarrito(array, contenedor) {
-    if(array.length == 0){
+    if (array.length == 0) {
         contenedor.innerHTML = `<h2>No hay productos en su bolsa</h2>`
         return;
     }
-     
+
     contenedor.innerHTML = ''
     let template = ''
     array.forEach(obj => {
         template = `
-    <div class="flex flex-col   p-4 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]  my-4  ">
+    <div class="flex flex-col   p-4 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]  my-4 bg-white rounded-lg items-center ">
         <img class="w-[100px]" src="${obj.imagen}" alt="">
         <h2>${obj.marca} ${obj.modelo} </h2>
         <h3> Precio: ${obj.precio}</h3>
@@ -27,71 +33,56 @@ function renderCarrito(array, contenedor) {
     });
 }
 let articulos = []
-//console.log(renderCarrito(carrito,shoppingContainer));
+
 if (carrito) {
     articulos = data.filter(prod => carrito.includes(prod.id))
     renderCarrito(articulos, shoppingContainer)
 }
 
-shoppingContainer.addEventListener('click',(e) => {
+
+
+shoppingContainer.addEventListener('click', (e) => {
     let id = e.target.dataset.deleteCard
-    if (id){
-        carrito = carrito.filter(prod => prod != id)  
+    if (id) {
+        carrito = carrito.filter(prod => prod != id)
         id = articulos.filter(producto => id != producto.id)
         articulos = id
     }
     localStorage.setItem('productosCarritos', JSON.stringify(carrito))
     renderCarrito(id, shoppingContainer)
+    location.reload()
+
+
 })
 
-let contadorProductos = 0;
-let precioProductos = 0;
-let descuentoTotal = 0;
 
 
-function agregarProducto(nombre, precio, descuento) {
+function agregarProducto(nombre, precio, descuento,stock) {
     contadorProductos++;
     let precioConDescuento = precio - (precio * descuento / 100);
     precioProductos += precioConDescuento;
     descuentoTotal += (precio * descuento / 100);
-
-    let listaProductos = document.getElementById('lista-productos');
     let producto = document.createElement('div');
     producto.classList.add('producto');
     producto.innerHTML = `
                 <p>${nombre} - $${precio.toFixed(2)}  (Descuento del ${descuento}%)</p>
-                <button onclick="disminuirCantidad(this, ${precio}, ${descuento})">-</button> 
-                <span class="cantidad">1 </span> 
-                <button onclick="aumentarCantidad(this, ${precio}, ${descuento})">+</button> 
+                 
+                <input  class='border border-black w-[50px]' type="number" name="" max="${stock}" min="1" id="" onchange="actualizarCantidad(this, ${precio}, ${descuento})">
+                
             `;
     listaProductos.appendChild(producto);
 
     actualizarCarrito();
 }
+function actualizarCantidad(input, precio, descuento) {
+    const cantidad = parseInt(input.value); // Obtenemos la cantidad actual del input y la convertimos a un número entero
+    const precioDescuento = precio - (precio * (descuento / 100)); // Calculamos el precio con el descuento aplicado
+    const nuevoValor = precioDescuento * cantidad; // Calculamos el nuevo valor basado en la cantidad y el precio con descuento
 
-function disminuirCantidad(button, precio, descuento) {
-    let cantidadElemento = button.nextElementSibling;
-    let cantidad = parseInt(cantidadElemento.textContent);
-    if (cantidad > 1) {
-        cantidad--;
-        cantidadElemento.textContent = cantidad;
-        contadorProductos--;
-        precioProductos -= precio;
-        descuentoTotal -= (precio * descuento / 100); // Restar el descuento del producto
-        actualizarCarrito();
-    }
+    // Actualizamos el valor del input con el nuevo valor
+    input.value = nuevoValor.toFixed(2); // Usamos toFixed(2) para redondear el nuevo valor a 2 decimales
 }
 
-function aumentarCantidad(button, precio, descuento) {
-    let cantidadElemento = button.previousElementSibling;
-    let cantidad = parseInt(cantidadElemento.textContent);
-    cantidad++;
-    cantidadElemento.textContent = cantidad;
-    contadorProductos++;
-    precioProductos += precio;
-    descuentoTotal += (precio * descuento / 100); // Sumar el descuento del producto
-    actualizarCarrito();
-}
 
 function actualizarCarrito() {
     let precioConDescuento = precioProductos - descuentoTotal;
@@ -104,6 +95,6 @@ function actualizarCarrito() {
 
 // interpolar data.propiedad
 articulos.forEach(producto => {
-    producto.nombre = `${producto.marca} ${producto.modelo}`;
+    producto.nombre = ` ${producto.marca} ${producto.modelo} ${producto.id} `;
     agregarProducto(producto.nombre, producto.precio, producto.descuento);
 })
