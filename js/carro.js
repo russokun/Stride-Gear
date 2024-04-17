@@ -12,45 +12,44 @@ if (carrito) {
   renderInput(articulos, listaProductos);
 }
 
-function renderInput (producto,contenedor)  {
-    let template = document.createElement("template");
-    template=''
-    producto.forEach(producto =>{
-        template =`
-      <div class="flex flex-wrap gap-4 items-center justify-center">
-        <img class="w-[75px]" src="${producto.imagen}" alt="">
-        <h2>${producto.marca} ${producto.modelo} ${producto.id}</h2>
-        <p data-precio='${producto.id}'> - $${producto.precio}  (Descuento del ${producto.descuento}%)</p>
-        <div class='flex flex-row items-center'>
-        
-        <button class='p-3 ' data-boton-menos='${producto.cantidad}' data-id ='${producto.id}'>-</button>
-        <input type="text" class="w-[20px]" name="" max='100' min='1' value='1' id="" data-cantidad='${producto.id}'>
-        <button class='p-3 ' data-boton-mas='${producto.cantidad}' data-id ='${producto.id}'>+</button>
-        </div>
-        <button class='flex ' data-deleteCard='${producto.id}'>
-        <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${producto.id}'>
-        </button>
-      </div>
-  `
-  contenedor.innerHTML += template
-})
+function renderInput(productos, contenedor) {
+  // Limpiar el contenido del contenedor
+  contenedor.innerHTML = '';
 
-listaProductos.addEventListener("click", (e) => {
-  let id = e.target.dataset.deleteCard;
-  console.log(id);
-  if (id) {
-    carrito = carrito.filter((prod) => prod != id);
-    id = articulos.filter((producto) => id != producto.id);
-    console.log(carrito);
-    console.log(id);
-  
-  }
-  localStorage.setItem("productosCarritos", JSON.stringify(carrito));
-  renderInput(id, listaProductos);
-  location.reload();
-});
+  // Recorrer los productos y renderizar cada uno
+  productos.forEach(producto => {
+      let template = `
+          <div class="flex flex-wrap gap-4 items-center justify-center">
+              <img class="w-[75px]" src="${producto.imagen}" alt="">
+              <h2>${producto.marca} ${producto.modelo} ${producto.id}</h2>
+              <p data-precio='${producto.id}'> - $${producto.precio}  (Descuento del ${producto.descuento}%)</p>
+              <div class='flex flex-row items-center'>
+                  <button class='p-3' data-boton-menos='${producto.cantidad}' data-id ='${producto.id}'>-</button>
+                  <input type="text" class="w-[20px]" name="" max='100' min='1' value='1' id="" data-cantidad='${producto.id}'>
+                  <button class='p-3' data-boton-mas='${producto.cantidad}' data-id ='${producto.id}'>+</button>
+              </div>
+              <button class='flex' data-deleteCard='${producto.id}'>
+                  <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${producto.id}'>
+              </button>
+          </div>
+      `;
+      // Agregar el template al contenedor
+      contenedor.innerHTML += template;
+  });
 
-};
+  listaProductos.addEventListener("click", (e) => {
+      let id = e.target.dataset.deleteCard;
+      if (id) {
+          carrito = carrito.filter((prod) => prod != id);
+          id = articulos.filter((producto) => id != producto.id)
+          articulos = id
+      }
+      localStorage.setItem("productosCarritos", JSON.stringify(carrito));
+      // Renderizar nuevamente los productos sin duplicados
+      renderInput(id, listaProductos);
+  });
+}
+
 //BOTONES
 let numeroCantidadSuma = 1
 listaProductos.addEventListener('click', e => {
