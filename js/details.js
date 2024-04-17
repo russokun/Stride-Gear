@@ -45,7 +45,7 @@ mainDetail.innerHTML = `
         </div>
     </div>
     <div class="md:w-1/2 flex flex-end justify-end">
-        <img class="h-[240px] w-[240px] object-contain rounded-lg shadow-md md:h-[360px] w-[360px]" src="${productoEncontrado.imagen}" alt="">
+        <img class="h-[240px] object-contain rounded-lg shadow-md md:h-[360px] w-[360px]" src="${productoEncontrado.imagen}" alt="">
     </div>
 </div>
 

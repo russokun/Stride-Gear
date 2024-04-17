@@ -56,6 +56,14 @@ shoppingContainer.addEventListener('click', (e) => {
 })
 
 
+function actualizarCantidad(input, precio, descuento) {
+    const cantidad = parseInt(input.value); // Obtenemos la cantidad actual del input y la convertimos a un número entero
+    const precioDescuento = precio - (precio * (descuento / 100)); // Calculamos el precio con el descuento aplicado
+    const nuevoValor = precioDescuento * cantidad; // Calculamos el nuevo valor basado en la cantidad y el precio con descuento
+
+    // Actualizamos el valor del input con el nuevo valor
+    input.value = nuevoValor.toFixed(2); // Usamos toFixed(2) para redondear el nuevo valor a 2 decimales
+}
 
 function agregarProducto(nombre, precio, descuento,stock) {
     contadorProductos++;
@@ -66,21 +74,13 @@ function agregarProducto(nombre, precio, descuento,stock) {
     producto.classList.add('producto');
     producto.innerHTML = `
                 <p>${nombre} - $${precio.toFixed(2)}  (Descuento del ${descuento}%)</p>
-                 
-                <input  class='border border-black w-[50px]' type="number" name="" max="${stock}" min="1" id="" onchange="actualizarCantidad(this, ${precio}, ${descuento})">
-                
+                <label>Cantidad:
+                    <input  class='border border-black w-[50px]' type="number" name="" max="${stock}" min="1" value='1'onchange="actualizarCantidad(this, ${precio}, ${descuento})">
+                </label>
             `;
     listaProductos.appendChild(producto);
 
     actualizarCarrito();
-}
-function actualizarCantidad(input, precio, descuento) {
-    const cantidad = parseInt(input.value); // Obtenemos la cantidad actual del input y la convertimos a un número entero
-    const precioDescuento = precio - (precio * (descuento / 100)); // Calculamos el precio con el descuento aplicado
-    const nuevoValor = precioDescuento * cantidad; // Calculamos el nuevo valor basado en la cantidad y el precio con descuento
-
-    // Actualizamos el valor del input con el nuevo valor
-    input.value = nuevoValor.toFixed(2); // Usamos toFixed(2) para redondear el nuevo valor a 2 decimales
 }
 
 
