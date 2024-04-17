@@ -1,4 +1,3 @@
-let shoppingContainer = document.getElementById("shoppingContainer");
 let carrito = JSON.parse(localStorage.getItem("productosCarritos")) || [];
 let productosCarrito = data.filter((producto) => carrito.includes(producto.id));
 
@@ -7,89 +6,82 @@ let contadorProductos = 0;
 let precioProductos = 0;
 let descuentoTotal = 0;
 
-function renderCarrito(array, contenedor) {
-  if (array.length == 0) {
-    contenedor.innerHTML = `<h2>No hay productos en su bolsa</h2>`;
-    return;
-  }
-
-  contenedor.innerHTML = "";
-  let template = "";
-  array.forEach((obj) => {
-    template = `
-    <div class="flex flex-col   p-4 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]  my-4 bg-white rounded-lg items-center ">
-        <img class="w-[100px]" src="${obj.imagen}" alt="">
-        <h2>${obj.marca} ${obj.modelo} </h2>
-        <h3> Precio: $ ${obj.precio}</h3>
-        <h3>Cantidad disponible: ${obj.stock}</h3>
-        <button class='flex ' data-deleteCard='${obj.id}'>
-        <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${obj.id}'>
-        </button>
-   </div>
-    
-    </div>`;
-    contenedor.innerHTML += template;
-  });
-}
-
 let articulos = [];
 if (carrito) {
   articulos = data.filter((prod) => carrito.includes(prod.id));
-
-  // Renderizar el carrito
-  renderCarrito(articulos, shoppingContainer);
-  // Guardar el carrito actualizado en el localStorage
+  renderInput(articulos, listaProductos);
 }
-
-shoppingContainer.addEventListener("click", (e) => {
-  let id = e.target.dataset.deleteCard;
-  if (id) {
-    carrito = carrito.filter((prod) => prod != id);
-    id = articulos.filter((producto) => id != producto.id);
-    articulos = id;
-  }
-  localStorage.setItem("productosCarritos", JSON.stringify(carrito));
-  renderCarrito(id, shoppingContainer);
-  location.reload();
-});
-
-
-
 
 function renderInput (producto,contenedor)  {
     let template = document.createElement("template");
     template=''
     producto.forEach(producto =>{
         template =`
+      <div class="flex flex-wrap gap-4 items-center justify-center">
+        <img class="w-[75px]" src="${producto.imagen}" alt="">
         <h2>${producto.marca} ${producto.modelo} ${producto.id}</h2>
-    <p data-precio='${producto.id}'> - $${producto.precio}  (Descuento del ${producto.descuento}%)</p>
-    <div class='flex flex-row items-center'>
-    <button class='p-3 ' data-boton-mas='${producto.cantidad}' data-id ='${producto.id}'>+</button>
-    
-    <input type="text" class="w-[20px]" name="" max='100' min='1' value='1' id="" data-cantidad='${producto.id}'>
-    
-    <button class='p-3 ' data-boton-menos='${producto.cantidad}' data-id ='${producto.id}'>-</button>
-    </div>
+        <p data-precio='${producto.id}'> - $${producto.precio}  (Descuento del ${producto.descuento}%)</p>
+        <div class='flex flex-row items-center'>
+        
+        <button class='p-3 ' data-boton-menos='${producto.cantidad}' data-id ='${producto.id}'>-</button>
+        <input type="text" class="w-[20px]" name="" max='100' min='1' value='1' id="" data-cantidad='${producto.id}'>
+        <button class='p-3 ' data-boton-mas='${producto.cantidad}' data-id ='${producto.id}'>+</button>
+        </div>
+        <button class='flex ' data-deleteCard='${producto.id}'>
+        <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${producto.id}'>
+        </button>
+      </div>
   `
   contenedor.innerHTML += template
 })
 
+listaProductos.addEventListener("click", (e) => {
+  let id = e.target.dataset.deleteCard;
+  console.log(id);
+  if (id) {
+    carrito = carrito.filter((prod) => prod != id);
+    id = articulos.filter((producto) => id != producto.id);
+    console.log(carrito);
+    console.log(id);
+  
+  }
+  localStorage.setItem("productosCarritos", JSON.stringify(carrito));
+  renderInput(id, listaProductos);
+  location.reload();
+});
+
 };
-renderInput(articulos, listaProductos,);
-//BOOTONES
+//BOTONES
 let numeroCantidadSuma = 1
 listaProductos.addEventListener('click', e => {
     
 
         let mas = e.target.dataset.botonMas;
         let menos = e.target.dataset.botonMenos;
-        
+        /*
+        if (mas || menos) {
+          let idCapturado = e.target.dataset.id
+          let cantidadd = document.querySelector('input[data-cantidad="${idCapturado}"]')
+          let producto = data.find(item => item.id == idCapturado)
+          if (cantidadd && producto) {
+            if (mas && parseInt(cantidadd.value) < producto.stock) {
+              cantidadd.value = parseInt(cantidadd.value) + 1;
+              precioProductos += producto.precio
+            }else if(menos && parseInt(cantidadd.value) > producto.stock){
+              cantidadd.value = parseInt(cantidadd.value) - 1;
+              precioProductos -= producto.precio
+            }
+          }
+          document.getElementById('total-productos').textContent = `Total: $${precioProductos}`
+        }
+        */
         
         if (mas) {
             let idCapturado = e.target.dataset.id
             console.log(idCapturado);
             let cantidadd = document.querySelector(`input[data-cantidad="${idCapturado}"]`)
             //console.log(parseInt(cantidadd.value));
+            aumentarCantidad(e.target, precioPro)
             cantidadd.value = parseInt(cantidadd.value )+ 1
             console.log(cantidadd.value);
         }
@@ -100,25 +92,14 @@ listaProductos.addEventListener('click', e => {
             let cantidadd = document.querySelector(`input[data-cantidad="${idCapturado}"]`)
             //console.log(parseInt(cantidadd.value));
             cantidadd.value = parseInt(cantidadd.value )- 1
-            console.log(cantidadd.value);
+            console.log(cantidadd.value); 
         }
+        
     
 });
 console.log(numeroCantidadSuma)
 
 //-------------------------------------------------------------------------------
-/* let cantidad = document.querySelector('p[data-cantidad="${producto.id}"]')
-console.log(cantidad); */
-let multiplicarPorPrecio= precio =>
-    numeroCantidadSuma * precio;
-
-/* let precio = ar
-let total= multiplicarPorPrecio()
-
-// Ejemplo de uso:
-let precioUnitario = articulos.filter(precio =>  ) // Ejemplo de precio
-let total = multiplicarPorPrecio(precioUnitario);
-console.log(total) */; // Mostrará el total multiplicado por el precio
 
 
 //funcion para calcular el precio con descuento
@@ -140,8 +121,11 @@ function agregarProducto( precio, descuento) {
 
 let incrementarContador = () => contadorProductos++;
 
-let sumarProducto = (precio) =>
-  (precioProductos += precio);
+let decrementarContador = () => contadorProductos--;
+
+let restarProducto = (precio) => precioProductos -= precio
+
+let sumarProducto = (precio) => precioProductos += precio;
 
 //funcion para calcular desc total
 let calcularDescuentoTotal = (precio, descuento) =>
@@ -150,7 +134,32 @@ let calcularDescuentoTotal = (precio, descuento) =>
 function actualizarCarrito() {
   let precioConDescuento = precioProductos - descuentoTotal;
 
-  document.getElementById("descuento").textContent = 'hola'
+  function disminuirCantidad(button, precio, descuento){
+    let cantidadElemento = button.previousElementSibling
+    let cantidad = parseInt(cantidadElemento.textContent)
+    if (cantidad > 1) {
+      cantidad--
+      cantidadElemento.textContent = cantidad
+      decrementarContador()
+      restarProductoProducto(precio)
+      calcularDescuentoTotal(precio, descuento)
+      actualizarCarrito()
+    }
+  }
+  
+
+function aumentarCantidad(button, precio, descuento){
+  let cantidadElemento = button.previousElementSibling
+  let cantidad = parseInt(cantidadElemento.textContent)
+  cantidad++
+  cantidadElemento.textContent = cantidad
+  incrementarContador()
+  sumarProducto(precio)
+  calcularDescuentoTotal(precio, descuento)
+  actualizarCarrito()
+}
+
+  document.getElementById("descuento").textContent = descuentoTotal.toFixed(2)
   document.getElementById("contador-productos").textContent = contadorProductos;
   document.getElementById("precio-productos").textContent = precioProductos.toFixed(2);
   document.getElementById("total-productos").textContent = precioConDescuento.toFixed(2);

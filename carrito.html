@@ -25,15 +25,10 @@
     <main class="flex flex-col min-h-screen items-center bg-orange-100 w-full">
         <section class="mt-4 mb-4 border-4 border-white px-2 rounded-xl md:px-20">
             <h2 class="font-serif md:text-lg text-3xl lg:text-5xl">Tu carrito:</h2>
-        </section>
-        <div id="shoppingContainer"
-            class="w-[60%] min-h-[90%]  shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)] rounded-xl flex justify-center items-center flex-col gap-8 md:flex-row md:flex-wrap bg-[#EADBC8] ">
-
-        </div>
-       
-        <div id="carrito" class="w-[40%] min-h-[90%] mt-8 border-2 border-white shadow-xl rounded-xl flex justify-center items-center bg-white flex-col gap-8 p-4">
+        </section>   
+        <div id="carrito" class="w-[80%] min-h-[90%] mt-8 border-2 border-white shadow-xl rounded-xl flex justify-center items-center bg-white flex-col gap-8 p-4">
             <h2 class="text-3xl">Mi Carrito (<span id="contador-productos">0</span> productos)</h2>
-            <div id="lista-productos" class="flex flex-col flex-wrap">
+            <div id="lista-productos" class="flex flex-col items-center justify-between flex-wrap w-full gap-4">
                 <!-- Los productos se agregarán aquí dinámicamente -->
             </div>
             <div id="total">
