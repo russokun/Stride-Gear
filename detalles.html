@@ -6,32 +6,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./assests/img/Logo-ico.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Stride Gear</title>
 </head>
-<body>
-    <header class="flex flex-col ">
-        <section class="bg-[#99C2EC] flex justify-between items-center p-5">
-            <div class="">
-                <img class="w-[80px]" src="./assests/img/logoconfondo.png" alt="">
-                <!-- <h1>Stride Gear</h1> -->
-            </div>
-            <nav>
-                <a href="./index.html">HOME</a>
-                <a href="./productos.html">PRODUCT</a>
-                <a href="./contacto.html">CONTACT</a>
+<body class="m-0 p-0 box-border flex flex-col min-h-screen">
+    <header class="flex flex-col w-full items-center justify-center md:flex-wrap ">
+        <section class="bg-[#99C2EC] flex flex-col justify-between items-center w-full md:flex-row">
+            <img class="h-[125px] w-[125px] lg:h-[150px] lg:w-[150px]" src="./assests/img/logoconfondo.png" alt="logo">
+            <!-- <h1>Stride Gear</h1> -->
+            <nav class="flex mb-2 md:mr-8 gap-8">
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./index.html">INICIO</a>
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./productos.html">PRODUCTOS</a>
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./contacto.html">CONTACTO</a>
             </nav>
         </section>
     </header>
-    <main class="bg-red-200 w-full h-screen">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil aspernatur adipisci, nam velit sint eum aliquam harum perspiciatis tenetur illum, saepe atque quae fugit quo quidem et. Deserunt, aliquam minima?</p>
-
+    <main id="mainDetail" class="flex flex-col min-h-[26rem] justify-center items-center bg-orange-100 w-full md:min-h-[29rem] lg:min-h-[35.8rem]">
+        
     </main>
-    <footer class="bg-[#99C2EC] h-1/4 p-4">
-        <h3>
+    <footer class="bg-[#99C2EC] flex justify-center h-1/4 w-full p-4 mt-auto">
+        <h3 class="text-sm">
             &copy; MindHub - Stride Gear 2024 - All rights reserved.
         </h3>
     </footer>
     <script src="./js/data.js"></script>
     <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/details.js"></script>
 </body>
 </html>

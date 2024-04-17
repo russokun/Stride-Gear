@@ -9,30 +9,62 @@
     <title>Stride Gear</title>
 </head>
 <body>
-    <header class="flex flex-col ">
-        <section class="bg-[#99C2EC] flex justify-between items-center p-5">
-            <div class="">
-                <img class="w-[80px]" src="./assests/img/logoconfondo.png" alt="">
-                <!-- <h1>Stride Gear</h1> -->
-            </div>
-            <nav>
-                <a href="#">HOME</a>
-                <a href="./productos.html">PRODUCT</a>
-                <a href="./contacto.html">CONTACT</a>
+    <header class="flex flex-col w-full items-center justify-center md:flex-wrap ">
+        <section class="bg-[#99C2EC] flex flex-col justify-between items-center w-full md:flex-row">
+            <img class="h-[125px] w-[125px] lg:h-[150px] lg:w-[150px]" src="./assests/img/logoconfondo.png" alt="logo">
+            <!-- <h1>Stride Gear</h1> -->
+            <nav class="flex mb-2 md:mr-8 gap-8">
+                <a class="bg-blue-900 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="#">INICIO</a>
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./productos.html">PRODUCTOS</a>
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./contacto.html">CONTACTO</a>
             </nav>
         </section>
     </header>
-    <main class="bg-red-200 w-full h-screen">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil aspernatur adipisci, nam velit sint eum aliquam harum perspiciatis tenetur illum, saepe atque quae fugit quo quidem et. Deserunt, aliquam minima?</p>
-
+    <main class="bg-orange-100 w-full h-[auto] flex flex-col items-center">
+        <div class="flex flex-col w-[75%] justify-center items-center">
+            <h1 class="text-center text-5xl mt-10 font-black text-blue-500">¡Somos Stride Gear!</h1>
+            <p class="text-center text-xl mt-5 max-w[20rem] font-bold">Donde cada paso es una expresión de estilo y comodidad. Desde los clásicos atemporales hasta las últimas tendencias de pasarela, nuestra selección cuidadosamente curada te ofrece todo lo que necesitas para lucir impecable en cualquier momento del día. Con marcas de renombre y precios irresistibles, hacemos que tu experiencia de compra sea tan emocionante como vestirte para esa ocasión especial. Descubre tu estilo único con Stride Gear y haz que cada día sea un desfile de moda.</p>
+        </div>
+        <div class="flex flex-col mt-5 justify-center">
+            <h2 class="text-center text-red-500 text-2xl font-bold pt-14">Aqui hay algunos nuestros principales socios comerciales:</h2>
+            <div class="slider-frame">
+                <ul class="h-1/4">
+                    <li><img src="https://static.vecteezy.com/system/resources/previews/010/994/325/original/adidas-logo-white-symbol-clothes-design-icon-abstract-football-illustration-with-black-background-free-vector.jpg" alt=""></li>
+                    <li><img src="https://4.bp.blogspot.com/-BGYw9I05BVk/TiRdC7c0NzI/AAAAAAAAAiQ/1ebLElEEGCc/s1600/Nike_logo.jpg" alt=""></li>
+                    <li><img src="https://www.nicepng.com/png/full/76-763451_reebok-logo-black-and-white-imagenes-del-logo.png" alt=""></li>
+                    <li><img src="https://logosmarcas.net/wp-content/uploads/2020/04/Under-Armour-S%C3%ADmbolo.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex justify-center mt-10 mb-3">
+            <a href="/productos.html" class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded duration-500">
+                <span class="mr-2">
+                    <ion-icon name="arrow-forward-circle"></ion-icon>
+                </span>
+                ¡No te quedes sin tus prendas! ¡Compra ahora!
+            </a>
+        </div>
     </main>
-    <footer class="bg-[#99C2EC] h-1/4 p-4">
-        <h3>
-            &copy; MindHub - Stride Gear 2024 - All rights reserved.
+    <div class="carousel relative overflow-hidden justify-around flex bg-white">
+        <div class="carousel-inner flex flex-row">
+            <div class="carousel-item">
+                <a href="/productos.html" class="text-[#99C2EC] font-semibold underline hover:text-[#EE5B58]">Descubre las últimas tendencias de moda aquí.</a>
+            </div>
+            <div class="carousel-item">
+                <a href="/productos.html" class="text-[#99C2EC] font-semibold underline hover:text-[#EE5B58]">Explora nuestra colección y encuentra tu estilo perfecto.</a>
+            </div>
+            <div class="carousel-item">
+                <a href="/productos.html" class="text-[#99C2EC] font-semibold underline hover:text-[#EE5B58]">Hazte con tus favoritos antes de que se agoten.</a>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-[#99C2EC] h-1/4 p-4 text-center">
+        <h3 class="font-bold text-[#EE5B58]">
+            &copy; MindHub - Stride Gear 2024 - Todos los derechos reservados.
         </h3>
     </footer>
-    <script src="./js/data.js"></script>
-    <script type="module" src="./js/app.js"></script>
+    <script src="./js/index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </body>
 </html>
 

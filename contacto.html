@@ -1,37 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
     <link rel="shortcut icon" href="./assests/img/Logo-ico.ico" type="image/x-icon">
     <title>Stride Gear</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </head>
-<body>
-    <header class="flex flex-col ">
-        <section class="bg-[#99C2EC] flex justify-between items-center p-5">
-            <div class="">
-                <img class="w-[80px]" src="./assests/img/logoconfondo.png" alt="">
-                <!-- <h1>Stride Gear</h1> -->
-            </div>
-            <nav>
-                <a href="./index.html">HOME</a>
-                <a href="./productos.html">PRODUCT</a>
-                <a href="#">CONTACT</a>
+
+<body class=" min-h-screen flex flex-col">
+    <header class="flex w-full md:flex-wrap flex-row justify-around">
+        <section class="bg-[#99C2EC] flex flex-col justify-between items-center w-full md:flex-row">
+            <img class="h-[125px] w-[125px] lg:h-[150px] lg:w-[150px]" src="./assests/img/logoconfondo.png" alt="logo">
+            <!-- <h1>Stride Gear</h1> -->
+            <nav class="flex mb-2 md:mr-8 gap-8">
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./index.html">INICIO</a>
+                <a class="bg-blue-500 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./productos.html">PRODUCTOS</a>
+                <a class="bg-blue-900 hover:bg-[#EE5B58] text-white font-bold py-2 px-4 rounded" href="./contacto.html">CONTACTO</a>
             </nav>
         </section>
     </header>
-    <main class="bg-red-200 w-full h-screen">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil aspernatur adipisci, nam velit sint eum aliquam harum perspiciatis tenetur illum, saepe atque quae fugit quo quidem et. Deserunt, aliquam minima?</p>
 
+    <main class="flex-grow bg-orange-100 flex flex-col items-center justify-center">
+        <h1 class="text-3xl font-bold text-center mb-8 mt-2">CONTACTO</h1>
+        <section class="w-11/12 md:w-3/4 lg:w-1/2 bg-white rounded shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">¡Hablemos!</h2>
+            <p class="text-lg mb-4">En Stride Gear, valoramos tu opinión y estamos aquí para ayudarte en todo lo que
+                necesites. Ya sea que tengas consultas sobre nuestros productos, necesites asistencia con un pedido o
+                simplemente quieras compartir tus comentarios, ¡nos encantaría escucharte!</p>
+            <p class="text-lg mb-4">Puedes contactarnos de las siguientes formas:</p>
+            <div class="flex flex-col mb-4">
+                <a href="mailto:info@stridegear.com.ar" class="text-lg text-blue-500 hover:underline flex items-center">
+                    <img src="./assests/img/icons8-email-16.png" alt="Icon-email" class="mr-2">
+                    info@stridegear.com.ar
+                </a>
+                <a href="tel:+5491123456789" class="text-lg text-blue-500 hover:underline flex items-center">
+                    <img src="./assests/img/icons8-whatsapp-16.png" alt="icon-whatsapp" class="mr-2">
+                    +54 9 11 2345 6789
+                </a>
+
+                <p class="text-lg">Redes sociales: Encuéntranos en Facebook, Instagram y Twitter como <a
+                        href="https://www.instagram.com/?hl=es" class="text-blue-500 hover:underline">@StrideGearArg</a>
+                </p>
+                <p class="text-lg">Horario de atención: Lunes a viernes, de 9:00 a.m. a 6:00 p.m. (hora local)</p>
+            </div>
+        </section>
+        <section class="w-11/12 md:w-3/4 lg:w-1/2 bg-white rounded shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">Formulario de contacto</h2>
+            <p class="text-lg mb-4">Puedes llenar el formulario a continuación y uno de nuestros representantes se
+                pondrá en contacto contigo en breve. ¡Estamos aquí para brindarte la mejor experiencia de compra
+                posible!</p>
+            <form id="formulario" class="space-y-4">
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre *</label>
+                    <input type="text" id="nombre" name="nombre" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <div>
+                    <label for="apellido" class="block text-sm font-medium text-gray-700">Apellido *</label>
+                    <input type="text" id="apellido" name="apellido" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+
+                <div>
+                    <label for="direccion" class="block text-sm font-medium text-gray-700">Dirección *</label>
+                    <input type="text" id="direccion" name="direccion" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm ">
+                </div>
+
+                <div>
+                    <label for="correo" class="block text-sm font-medium text-gray-700">Correo electrónico *</label>
+                    <input type="email" id="correo" name="correo" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+                </div>
+
+                <div>
+                    <label for="telefono" class="block text-sm font-medium text-gray-700">Número de teléfono</label>
+                    <input type="number" id="telefono" name="telefono"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm ">
+                </div>
+
+                <div>
+                    <label for="comentarios" class="block text-sm font-medium text-gray-700">Comentario</label>
+                    <textarea id="comentario" name="comentario" rows="4"
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"></textarea>
+                </div>
+
+                <div>
+                    <button id="btn-enviar"
+                        class="w-full py-2 px-4 rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:bg-blue-700">Enviar</button>
+                </div>
+            </form>
+        </section>
+        <section class="w-11/12 md:w-3/4 lg:w-1/2 bg-white rounded shadow-lg p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-4">Ubicación</h2>
+            <div class="aspect-w-16 aspect-h-9 mb-4">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13136.017375288673!2d-58.3944625339588!3d-34.604051667263676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac5dd595589%3A0xcc91d385c40fd71e!2sAv.%20Corrientes%201234%2C%20C1043AAZ%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1713219202992!5m2!1ses-419!2sar"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </section>
+        <p class="text-center p-5">¡Gracias por elegir Stride Gear!</p>
     </main>
-    <footer class="bg-[#99C2EC] h-1/4 p-4">
-        <h3>
+    <footer class="bg-[#99C2EC] flex justify-center h-1/4 w-full p-4 mt-auto">
+        <h3 class="text-sm">
             &copy; MindHub - Stride Gear 2024 - All rights reserved.
         </h3>
     </footer>
-    <script src="./js/data.js"></script>
-    <script type="module" src="./js/app.js"></script>
+    <!-- <script src="./js/data.js"></script> -->
+    <!-- <script type="module" src="./js/app.js"></script> -->
+    <script src="js/sweetAlert.js"></script>
 </body>
+
 </html>
