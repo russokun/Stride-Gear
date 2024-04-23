@@ -46,10 +46,10 @@ function renderCards(productos, contenedor) {
                     </button>
                     ${!productoPush.includes(obj.id) ?
                         `<button>
-                            <img class='w-[50px]' src="./assests/img/shopping-cart-verified-symbol_icon-icons.com_56123.png" alt="" data-compra ='${obj.id}'>
+                            <img class='w-[50px]' src="./assests/img/shopping_cartgreen_icon_156961.png" alt="" data-compra ='${obj.id}'>
                         </button>` :
                         `<button>
-                            <img class='w-[50px]' src="./assests/img/shopping-cart-cancel-button_icon-icons.com_56130.png" alt="" data-compra ='${obj.id}'>
+                            <img class='w-[50px]' src="./assests/img/ic_shopping_cartred_128_28698.png" alt="" data-compra ='${obj.id}'>
                         </button>`
                     }
                 </div>

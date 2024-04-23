@@ -30,7 +30,7 @@ function renderInput(productos, contenedor) {
                   <button class='p-3' data-boton-mas='${producto.id}'>+</button>
               </div>
               <button class='flex' data-deleteCard='${producto.id}'>
-                  <img class='w-[30px]' src="./assests/img/cart_off_icon_135804.png" alt="" data-delete-card='${producto.id}'>
+                  <img class='w-[30px]' src="./assests/img/trash-can_115312.png" alt="" data-delete-card='${producto.id}'>
               </button>
               </div>
           </div>
