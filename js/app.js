@@ -34,9 +34,10 @@ function renderCards(productos, contenedor) {
            <h3 class= "font-medium pl-4 text-lg ">${obj.modelo}</h3>
            
            <p class="pl-4 pb-[10px]"> ${obj.descripcion.slice(0, 40)}...</p>
+           <p class="pl-4 pb-[10px] font-bold">$${obj.precio}</p>
            <div class='flex flex-row justify-around'>
 
-           <a href="./detalles.html?id=${obj.id}" class= "bg-black text-white p-2 w-2/4 text-center rounded-xl ">Detalles</a>
+           <a href="./detalles.html?id=${obj.id}" class= "bg-black text-white p-2 w-2/4 text-center flex justify-center items-center rounded-xl ">Detalles</a>
            <button>
            <img class='w-[50px]' src="" alt="">
        </button> 

@@ -284,7 +284,7 @@ const data = [
     "descuento": 5,
     "imagen": "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-reebok-classic-nylon-azul-111010fv1595001-1.jpg",
     "descripcion": "Las Reebok Classic Nylon son un clásico del estilo urbano, con su diseño retro y su comodidad duradera. Ideales para combinar con cualquier look casual.",
-    "precio_total": 60,
+    "precio_total": 62.75,
     "cantidad": 1
   },
 
@@ -316,7 +316,7 @@ const data = [
     "descuento": 5,
     "imagen": "https://img.planetafobal.com/2013/08/real-madrid-adidas-titular-2013-2014-camiseta.jpg",
     "descripcion": "La camiseta de fútbol del Real Madrid, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
-    "precio_total": 80 ,
+    "precio_total": 80.75,
     "cantidad": 1
   },
   {
@@ -331,7 +331,7 @@ const data = [
     "descuento": 10,
     "imagen": "https://www.futbolemotion.com/imagesarticulos/200156/grandes/camiseta-puma-ac-milan-pre-match-2023-2024-red-black-0.webp",
     "descripcion": "La camiseta de fútbol del AC Milan, fabricada por Puma, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
-    "precio_total": 65,
+    "precio_total": 67.5,
     "cantidad": 1
   },
   {
@@ -346,7 +346,7 @@ const data = [
     "descuento": 15,
     "imagen": "https://th.bing.com/th/id/OIP.ANRR8MZmBuCLRrkNcMmHXgAAAA?rs=1&pid=ImgDetMain ",
     "descripcion": "La camiseta de fútbol del Paris Saint-Germain, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
-    "precio_total": 75,
+    "precio_total": 76.5,
     "cantidad": 1
   },
   {
@@ -377,7 +377,7 @@ const data = [
     "descuento": 5,
     "imagen":" https://lecoqsportif.com.ar/wp-content/uploads/2023/05/LE-COQ54257-1024x1024.jpg ",
     "descripcion": "La camiseta de vóley de la Selección Argentina, fabricada por Mikasa, ofrece comodidad y libertad de movimiento en la cancha. Con tela transpirable para mantenerte fresco durante el juego.",
-    "precio_total": 55,
+    "precio_total": 57,
      },
   {
     "tipo": "Camisetas",
@@ -439,7 +439,7 @@ const data = [
     "descuento": 10,
     "imagen": "https://www.dexter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw036a9ee9/products/ADIB3593/ADIB3593-1.JPG",
     "descripcion": "Diseñada para los verdaderos fanáticos del fútbol y para aquellos que llevan el orgullo argentino en el corazón, esta camiseta de la selección argentina es un símbolo de pasión y tradición. Fabricada con los mejores materiales y la más alta calidad, esta camiseta ofrece comodidad y rendimiento en cada partido. Con los icónicos colores celeste y blanco, y el escudo de la AFA en el pecho, esta camiseta representa la historia y la grandeza del fútbol argentino. Ya sea en el estadio o en la calle, llevar esta camiseta es mostrar tu apoyo incondicional a la Albiceleste y a todo lo que representa el fútbol argentino.La camiseta de rugby de la Selección Argentina, fabricada por Nike, es la misma que usan los jugadores en el campo. Con tecnología que absorbe la humedad para mantenerte fresco y seco durante el juego.",
-    "precio_total": 65,
+    "precio_total": 67.5,
     
   },
   {

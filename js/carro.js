@@ -55,68 +55,67 @@ function renderInput(productos, contenedor) {
 
 // Función para eliminar un producto del carrito
 function eliminarProducto(e) {
-  let id = e.target.dataset.deleteCard;
+  let id = e.target.dataset.deleteCard
   if (id) {
-    carrito = carrito.filter((prod) => prod !== id);
-    localStorage.setItem("productosCarritos", JSON.stringify(carrito));
-    productosCarrito = productosCarrito.filter(producto => producto.id !== id);
-    renderInput(productosCarrito, listaProductos);
-    actualizarCarrito();
+    carrito = carrito.filter((prod) => prod !== id)
+    localStorage.setItem("productosCarritos", JSON.stringify(carrito))
+    productosCarrito = productosCarrito.filter(producto => producto.id !== id)
+    renderInput(productosCarrito, listaProductos)
+    actualizarCarrito()
   }
 }
 
 // Función para aumentar la cantidad de un producto en el carrito
 function aumentarCantidad(e) {
-  let id = e.target.dataset.botonMas;
-  let inputCantidad = document.querySelector(`input[data-cantidad="${id}"]`);
-  let producto = productosCarrito.find(prod => prod.id === id);
+  let id = e.target.dataset.botonMas
+  let inputCantidad = document.querySelector(`input[data-cantidad="${id}"]`)
+  let producto = productosCarrito.find(prod => prod.id === id)
   if (inputCantidad && producto) {
     if (parseInt(inputCantidad.value) < producto.stock) {
-      inputCantidad.value = parseInt(inputCantidad.value) + 1;
-      actualizarCarrito();
+      inputCantidad.value = parseInt(inputCantidad.value) + 1
+      actualizarCarrito()
     }
   }
 }
 
 // Función para disminuir la cantidad de un producto en el carrito
 function disminuirCantidad(e) {
-  let id = e.target.dataset.botonMenos;
-  let inputCantidad = document.querySelector(`input[data-cantidad="${id}"]`);
+  let id = e.target.dataset.botonMenos
+  let inputCantidad = document.querySelector(`input[data-cantidad="${id}"]`)
   if (inputCantidad) {
     if (parseInt(inputCantidad.value) > 1) {
-      inputCantidad.value = parseInt(inputCantidad.value) - 1;
-      actualizarCarrito();
+      inputCantidad.value = parseInt(inputCantidad.value) - 1
+      actualizarCarrito()
     }
   }
 }
 
 // Función para actualizar el carrito de compras y los precios
 function actualizarCarrito() {
-  // Resetear los valores
-  contadorProductos = 0;
-  precioProductos = 0;
-  descuentoTotal = 0;
+  contadorProductos = 0
+  precioProductos = 0
+  descuentoTotal = 0
 
   // Recorrer los productos en el carrito y calcular los totales
   productosCarrito.forEach(producto => {
-    contadorProductos++;
-    let cantidad = parseInt(document.querySelector(`input[data-cantidad="${producto.id}"]`).value);
-    precioProductos += producto.precio * cantidad;
-    descuentoTotal += (producto.precio * producto.descuento / 100) * cantidad;
-  });
+    contadorProductos++
+    let cantidad = parseInt(document.querySelector(`input[data-cantidad="${producto.id}"]`).value)
+    precioProductos += producto.precio * cantidad
+    descuentoTotal += (producto.precio * producto.descuento / 100) * cantidad
+  })
 
   // Actualizar los elementos en el DOM con los nuevos valores
-  document.getElementById("contador-productos").textContent = contadorProductos;
-  document.getElementById("precio-productos").textContent = precioProductos.toFixed(2);
-  document.getElementById("descuento").textContent = descuentoTotal.toFixed(2);
+  document.getElementById("contador-productos").textContent = contadorProductos
+  document.getElementById("precio-productos").textContent = precioProductos.toFixed(2)
+  document.getElementById("descuento").textContent = descuentoTotal.toFixed(2)
 
   // Calcular el precio final con descuento
-  let precioConDescuento = precioProductos - descuentoTotal;
-  document.getElementById("total-productos").textContent = precioConDescuento.toFixed(2);
+  let precioConDescuento = precioProductos - descuentoTotal
+  document.getElementById("total-productos").textContent = precioConDescuento.toFixed(2)
 
   // Guardar el estado actual del carrito en localStorage
-  localStorage.setItem("productosCarritos", JSON.stringify(carrito));
+  localStorage.setItem("productosCarritos", JSON.stringify(carrito))
 }
 
 // Llamada inicial para cargar el carrito al cargar la página
-actualizarCarrito();
+actualizarCarrito()
