@@ -192,7 +192,7 @@ const data = [
     "id": "AD3002",
     "precio": 180,
     "descuento": 15,
-    "imagen": "https://s3.sa-east-1.amazonaws.com/www.vaypol.com.ar/variants/tofb6ehlmikxl9ig7w0e3dwh2g26/c77c2a06864ac9aca38dc5bd9371de015471edcdbf322dfb14411689bf968ae5",
+    "imagen": "https://cdn-images.farfetch-contents.com/17/69/90/51/17699051_37167101_600.jpg",
     "descripcion": "Las Adidas Ultra Boost ofrecen un retorno de energía sin límites y una comodidad inigualable para tus carreras diarias.",
     "precio_total": 153,
     "cantidad": 1
@@ -222,7 +222,7 @@ const data = [
     "id": "ADU21WHPNK",
     "precio": 150,
     "descuento": 15,
-    "imagen": "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/S/2/S23840_0_14.jpg",
+    "imagen": "https://i.ebayimg.com/images/g/u2gAAOSwVfJjoWb8/s-l640.png",
     "descripcion": "Las Adidas Ultraboost 21 ofrecen un retorno de energía sin fin gracias a su tecnología Boost, proporcionando una sensación de ligereza en cada paso.",
     "precio_total": 135,
     "cantidad": 1
@@ -359,7 +359,7 @@ const data = [
     "id": "CA5001",
     "precio": 70,
     "descuento": 0,
-    "imagen": "https://www.rugbyes.com/images/RWC/Nueva%20Zelandia/Camiseta_Nueva_Zelandia_All_Blacks_Rugby_2018_Gris.jpg",
+    "imagen": "https://media.karousell.com/media/photos/products/2023/7/27/vintage_canterbury_steinlager__1690466668_8a9f9eb3_progressive.jpg",
     "descripcion": "La camiseta de rugby de los All Blacks, fabricada por Canterbury, es la misma que usan los jugadores en el campo. Con tecnología que absorbe la humedad para mantenerte fresco y seco durante el juego.",
     "precio_total" : 70,
     "cantidad": 1  
@@ -405,7 +405,7 @@ const data = [
     "cantidad": 1,
     "precio": 70,
     "descuento": 0,
-    "imagen": "https://acdn.mitiendanube.com/stores/001/220/451/products/nike-jordan-xxxiii-2022-04-04t215806-2811-1098cb71fd288e298a16491210604442-640-0.png",
+    "imagen": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_600,h_600/https://sportsmuseum.cl/wp-content/uploads/2023/01/PhotoRoom_000_20230818_103656.jpg",
     "descripcion": "La camiseta de fútbol de Boca Juniors, fabricada por Adidas, es la misma que usan los jugadores en el campo. Con tecnología de ventilación para mantenerte fresco y seco durante el juego.",
     "precio_total": 70,
     "cantidad": 1
@@ -545,7 +545,7 @@ const data = [
     "cantidad": 1,
     "descripcion": "Los pantalones deportivos Adidas Tiro 19 ofrecen un ajuste ceñido y cómodo para entrenamientos intensos.",
     "precio_total": 63,
-    "imagen": "https://s3.sa-east-1.amazonaws.com/www.vaypol.com.ar/variants/ajb4sz3pq3tjxv27ouyv5x3183rm/c77c2a06864ac9aca38dc5bd9371de015471edcdbf322dfb14411689bf968ae5 "
+    "imagen": "https://www.timeoutsports.ca/cdn/shop/files/u_-_Adidas_Tiro_19_Training_Pants_BW_M.png?v=1723069339"
   },
   {
     "tipo": "Pantalones",
